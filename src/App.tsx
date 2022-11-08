@@ -6,6 +6,7 @@ import Navbar from './components/estaticos/navbar/Navbar';
 import Footer from './components/estaticos/footer/Footer';
 import Login from './paginas/login/Login';
 import Sobre from './paginas/sobre/Sobre';
+import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
       <Route path="/home" element={<Home />} />
 
       <Route path="/login" element={<Login />} />
+
+      <Route path="/cadastrousuario" element={<CadastroUsuario />} />
 
       <Route path="/sobre" element={<Sobre />} />
 
