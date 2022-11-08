@@ -13,7 +13,7 @@ function Login() {
   const [userLogin, setUserLogin] = useState<UserLogin>({
     id: 0,
     nome: "",
-    email: "",
+    usuario: "",
     foto: "",
     senha: "",
     token: "",
@@ -63,12 +63,13 @@ function Login() {
             <TextField
               onChange={(event: ChangeEvent<HTMLInputElement>) =>
                 updateModel(event)
+                
               }
-              value={userLogin.email}
+              value={userLogin.usuario}
               id="email"
               label="email"
               variant="outlined"
-              name="email"
+              name="usuario"
               margin="normal"
               fullWidth
             />

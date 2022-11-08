@@ -23,6 +23,7 @@ function CadastroUsuario() {
     cnpj: "",
     endereco: "",
     tipo: "",
+    
   });
 
   const [userResult, setUserResult] = useState<Usuario>({
@@ -139,6 +140,27 @@ function CadastroUsuario() {
               label="tipo"
               variant="outlined"
               name="tipo"
+              margin="normal"
+              fullWidth
+
+            />
+            <TextField
+              value={user.cpf}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+              id="cpf"
+              label="cpf"
+              variant="outlined"
+              name="cpf"
+              margin="normal"
+              fullWidth
+            />
+            <TextField
+              value={user.cnpj}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+              id="cnpj"
+              label="cnpj"
+              variant="outlined"
+              name="cnpj"
               margin="normal"
               fullWidth
             />
