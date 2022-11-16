@@ -4,11 +4,6 @@ import { useNavigate, Link } from "react-router-dom";
 import Usuario from "../../models/Usuario";
 import { cadastroUsuario } from "../../services/Service";
 import { Grid, Typography, Button, TextField } from "@material-ui/core";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormControl from "@mui/material/FormControl";
-import FormLabel from "@mui/material/FormLabel";
 import "./CadastroUsuario.css";
 
 function CadastroUsuario() {

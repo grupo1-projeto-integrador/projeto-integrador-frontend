@@ -5,11 +5,14 @@ import { Box } from "@mui/material";
 import "./Login.css";
 import UserLogin from "../../models/UserLogin";
 import { login } from "../../services/Service";
-import useLocalStorage from "react-use-localstorage";
+import { useDispatch } from 'react-redux';
+import { addToken, addId } from '../../store/tokens/Actions';
+import { toast } from 'react-toastify';
 
 function Login() {
   let navigate = useNavigate();
-
+  const dispatch = useDispatch();
+  const [token, setToken] = useState('');
   const [userLogin, setUserLogin] = useState<UserLogin>({
     id: 0,
     nome: "",
@@ -19,7 +22,14 @@ function Login() {
     token: "",
   });
 
-  const [token, setToken] = useLocalStorage("token");
+  const [respUserLogin, setRespUserLogin] = useState <UserLogin>({
+    id: 0,
+    nome: '',
+    usuario: "",
+    foto: "",
+    senha: "",
+    token: "",
+  })
 
   function updateModel(event: ChangeEvent<HTMLInputElement>) {
     setUserLogin({
@@ -29,21 +39,50 @@ function Login() {
   }
 
   useEffect(() => {
-    if (token != '') {
+    if (token !== '') {
+      dispatch(addToken(token))
       navigate("/home");
     }
   }, [token]);
 
+  useEffect(() => {
+    if (respUserLogin.token !== '') {
+      dispatch(addToken(respUserLogin.token))
+      dispatch(addId(respUserLogin.id.toString()))
+      navigate("/home");
+    }
+  }, [respUserLogin.token]);
+
   async function logar(event: ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
+
     try {
-      await login("/usuarios/logar", userLogin, setToken);
-      alert("Usuário logado com sucesso");
-    } catch (error) {
-      alert("Dados do usuário inconsistentes. Erro ao logar");
-    }
-    await login("/usuarios/logar", userLogin, setToken);
-  }
+            await login(`/usuarios/logar`, userLogin, setRespUserLogin);
+            toast.success('Usuário logado com sucesso', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
+        } catch (error) {
+            alert('Dados do usuário incorretos.');
+            toast.error('Dados do usuário incorretos', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
+        }
+
+   }
 
   return (
     <Grid container direction="row" justifyContent="center" alignItems="center">

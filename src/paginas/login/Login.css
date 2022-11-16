@@ -14,3 +14,7 @@
  .text-decorator-none{
      text-decoration: none;
  }
+
+ .cor-botao {
+    background-color: #4d924d !important;
+}
