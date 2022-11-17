@@ -69,7 +69,6 @@ function Login() {
                 progress: undefined,
             });
         } catch (error) {
-            alert('Dados do usuário incorretos.');
             toast.error('Dados do usuário incorretos', {
                 position: "top-right",
                 autoClose: 2000,
@@ -85,7 +84,7 @@ function Login() {
    }
 
   return (
-    <Grid container direction="row" justifyContent="center" alignItems="center">
+    <Grid container direction="row" justifyContent="center" alignItems="center" className="box">
       <Grid alignItems="center" xs={6}>
         <Box paddingX={20}>
           <form onSubmit={logar}>
@@ -106,7 +105,7 @@ function Login() {
               }
               value={userLogin.usuario}
               id="email"
-              label="email"
+              label="Email"
               variant="outlined"
               name="usuario"
               margin="normal"
@@ -118,7 +117,7 @@ function Login() {
               }
               value={userLogin.senha}
               id="senha"
-              label="senha"
+              label="Senha"
               variant="outlined"
               name="senha"
               margin="normal"
@@ -126,7 +125,7 @@ function Login() {
               fullWidth
             />
             <Box marginTop={2} textAlign="center">
-              <Button type="submit" variant="contained" color="primary">
+              <Button type="submit" variant="contained" color="primary" disabled={!userLogin.usuario || ! userLogin.senha}>
                 Logar
               </Button>
             </Box>

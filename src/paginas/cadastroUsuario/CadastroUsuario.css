@@ -19,3 +19,13 @@
 .btnCadastrar {
     background-color: #4d924d;
 }
+
+.box{
+    background-color: rgb(254, 250, 224);
+}
+
+.form{
+    display: flex !important;
+    align-items: center;
+    margin: 10px !important;
+}
