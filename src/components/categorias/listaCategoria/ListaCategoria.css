@@ -1,0 +1,11 @@
+.text-decorator-none{
+    text-decoration: none;
+}
+
+.btnDeletar {
+    background-color: #cc4932;
+}
+
+.btnAtualizar {
+    background-color: #4d924d;
+}
