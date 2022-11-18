@@ -44,34 +44,34 @@ function Navbar() {
 
             <Box display="flex" justifyContent="start">
                 <Link to="/home" className="text-decorator-none">
-                <Box mx={1} className='cursor'>
+                <Box mx={2} className='cursor'>
                     <Typography variant="h6" color="inherit">
                         Home
                     </Typography>
                 </Box>
                 </Link>
                 <Link to="/produtos" className="text-decorator-none">
-                <Box mx={1} className='cursor'>
+                <Box mx={2} className='cursor'>
                     <Typography variant="h6" color="inherit">
                         Produtos
                     </Typography>
                 </Box>
                 </Link>
                 <Link to="/categoria" className="text-decorator-none">
-                <Box mx={1} className='cursor'>
+                <Box mx={2} className='cursor'>
                     <Typography variant="h6" color="inherit">
                         Categorias
                     </Typography>
                 </Box>
                 </Link>
                 <Link to="/formularioCategoria" className="text-decorator-none">
-                <Box mx={1} className='cursor'>
+                <Box mx={2} className='cursor'>
                     <Typography variant="h6" color="inherit">
                         Cadastrar Categoria
                     </Typography>
                 </Box>
                 </Link>
-                    <Box mx={1} className='cursor' onClick={goLogout}>
+                    <Box mx={2} className='cursor' onClick={goLogout}>
                         <Typography variant="h6" color="inherit">
                             Logout
                         </Typography>

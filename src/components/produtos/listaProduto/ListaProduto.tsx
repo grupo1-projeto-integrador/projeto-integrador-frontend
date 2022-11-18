@@ -71,6 +71,9 @@ function ListaProduto() {
                         <Typography variant="body2" component="p">
                             {produto.categoria?.titulo}
                         </Typography>
+                        <Typography variant="body2" component="p">
+                            Postado por: {produto.usuario?.nome}
+                        </Typography>
                     </CardContent>
                     <CardActions>
                         <Box display="flex" justifyContent="center" mb={1.5}>

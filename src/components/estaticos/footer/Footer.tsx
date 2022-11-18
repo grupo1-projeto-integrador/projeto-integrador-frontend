@@ -30,9 +30,6 @@ function Footer() {
                     <a href="https://www.instagram.com/generationbrasil/" target="_blank" rel="noopener noreferrer">
                         <InstagramIcon className='redes' />
                     </a>
-                    <a href="https://www.linkedin.com/school/generationbrasil/" target="_blank" rel="noopener noreferrer">
-                        <LinkedInIcon className='redes' />
-                    </a>
                 </Box>
             </Box>
             <Box className='box2'>
