@@ -57,9 +57,12 @@ function CadastroProduto() {
     const [usuario, setUsuario] = useState<Usuario>({
         id: +userId,
         nome: '',
-        usuario: '',
+        email: '',
         senha: '',
-        foto: ''
+        cpf:'',
+        cnpj:'',
+        endereco:'',
+        tipo:''
     })
 
     useEffect(() => {

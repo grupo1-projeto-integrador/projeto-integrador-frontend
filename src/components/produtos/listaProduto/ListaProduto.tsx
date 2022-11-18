@@ -72,7 +72,7 @@ function ListaProduto() {
                             {produto.categoria?.titulo}
                         </Typography>
                         <Typography variant="body2" component="p">
-                            Postado por: {produto.usuario?.nome}
+                            Vendido por: {produto.usuario?.nome}
                         </Typography>
                     </CardContent>
                     <CardActions>

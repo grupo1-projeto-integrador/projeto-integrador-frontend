@@ -1,3 +1,5 @@
+import Produto from "./Produto";
+
 interface Usuario {
 
     id:number;
@@ -8,7 +10,7 @@ interface Usuario {
     cnpj:string;
     endereco:string;
     tipo:string;
-    Produto?: Produto[]
+    produto?: Produto[]
 }
 
 export default Usuario;
