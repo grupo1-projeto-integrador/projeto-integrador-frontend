@@ -149,11 +149,11 @@ function CadastroUsuario() {
               align="center"
               className="textos2"
             >
-              Cadastrar
+              Cadastro
             </Typography>
             <FormControl className="form">
               <FormLabel
-                id="tipoUsuario">Tipo de usuário</FormLabel>
+                id="tipoUsuario">Você é um...</FormLabel>
               <RadioGroup
                 row
                 aria-labelledby="tipoDeUsuario"
@@ -162,8 +162,8 @@ function CadastroUsuario() {
                 id="tipo"
                 name="tipo"
               >
-                <FormControlLabel value="consumidor" control={<Radio />} label="Consumidor" />
-                <FormControlLabel value="vendedor" control={<Radio />} label="Vendedor" />
+                <FormControlLabel value="consumidor" control={<Radio />} label="Consumidor"/>
+                <FormControlLabel value="vendedor" control={<Radio />} label="Fornecedor"/>
               </RadioGroup>
             </FormControl>
             <TextField

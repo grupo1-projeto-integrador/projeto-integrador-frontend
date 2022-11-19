@@ -96,12 +96,11 @@ function Login() {
               align="center"
               className="textos1"
             >
-              Entrar
+              Seja bem-vindo!
             </Typography>
             <TextField
               onChange={(event: ChangeEvent<HTMLInputElement>) =>
                 updateModel(event)
-                
               }
               value={userLogin.usuario}
               id="email"
@@ -125,15 +124,15 @@ function Login() {
               fullWidth
             />
             <Box marginTop={2} textAlign="center">
-              <Button type="submit" variant="contained" color="primary" disabled={!userLogin.usuario || ! userLogin.senha}>
-                Logar
+              <Button type="submit" variant="contained" color="primary" disabled={!userLogin.usuario || ! userLogin.senha} className='botao'>
+                Logar <img src="https://www.svgrepo.com/show/15579/tree.svg" alt="" className="botao"/>
               </Button>
             </Box>
           </form>
           <Box display="flex" justifyContent="center" marginTop={2}>
             <Box marginRight={1}>
               <Typography variant="subtitle1" gutterBottom align="center">
-                Não tem uma conta?
+                Ainda não tem uma conta?
               </Typography>
             </Box>
             <Link to="/cadastrousuario">

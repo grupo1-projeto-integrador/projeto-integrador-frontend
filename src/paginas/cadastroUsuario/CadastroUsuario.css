@@ -1,5 +1,5 @@
 .imagem2{
-    background-image: url(https://i.imgur.com/d5bMdDJ.jpg);
+    background-image: url(https://images.unsplash.com/photo-1597916829826-02e5bb4a54e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80);
     background-repeat: no-repeat;
     width: 100vh;
     min-height: 100vh;
@@ -9,6 +9,7 @@
 
 .textos2{
     font-weight: bold !important;
+    margin: 30px !important;
 }
 
 .btnCancelar {
@@ -28,4 +29,9 @@
     display: flex !important;
     align-items: center;
     margin: 10px !important;
+}
+
+
+.texto{
+font-size: 20px !important;
 }
