@@ -106,6 +106,9 @@ function ListaProduto() {
                         <Typography variant="body2" component="p">
                             {produto.categoria?.titulo}
                         </Typography>
+                        <Typography variant="body2" component="p">
+                            Vendido por: {produto.usuario?.nome}
+                        </Typography>
                     </CardContent>
                     {usuario.tipo ==='vendedor'? 
                     (<>                <CardActions>

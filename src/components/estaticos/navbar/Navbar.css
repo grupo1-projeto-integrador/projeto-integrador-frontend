@@ -1,6 +1,6 @@
 .cursor{
     cursor: pointer;
-    color: white;
+    color: #FEFAE0;
 }
 
 .text-decorator-none {
@@ -8,5 +8,5 @@
 }
 
 .color{
-    background-color: #2c3d3f !important;
+    background-color: #606C38 !important;
 }
