@@ -79,11 +79,11 @@ function ListaCategoria() {
     }, [categoria.length])
 
     return (
-        <>
+        <div className='card1' > 
         {
             categoria.map(categoria => (
             <Box m={2} >
-                <Card variant="outlined">
+                <Card variant="outlined" className= "card">
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>
                             Categoria
@@ -120,7 +120,7 @@ function ListaCategoria() {
             </Box>
             ))
             }
-        </>
+        </div>
     );
 }
 

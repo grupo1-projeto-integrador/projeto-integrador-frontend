@@ -80,11 +80,11 @@ function ListaProduto() {
 
 
     return (
-        <>
+        <div className='card1' >
         {
             produto.map(produto =>(
             <Box m={2} >
-                <Card variant="outlined">
+                <Card variant="outlined" className= "card">
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>
                             Produtos
@@ -111,7 +111,7 @@ function ListaProduto() {
                         </Typography>
                     </CardContent>
                     {usuario.tipo ==='vendedor'? 
-                    (<>                <CardActions>
+                    (<>                <CardActions className='cardbotao'>
                         <Box display="flex" justifyContent="center" mb={1.5}>
                             <Link to={`/formularioProduto/${produto.id}`} className="text-decorator-none" >
                                 <Box mx={1}>
@@ -137,7 +137,7 @@ function ListaProduto() {
             </Box>
             ))
             }
-        </>
+        </div>
         );
 }
 

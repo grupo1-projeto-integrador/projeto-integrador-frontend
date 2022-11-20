@@ -3,9 +3,28 @@
 }
 
 .btnDeletar {
-    background-color: #cc4932;
+    background-color: #DDA15E !important
 }
 
 .btnAtualizar {
-    background-color: #4d924d;
+    background-color: #606C38 !important;
+}
+
+.card {
+    padding: 32px 23px;
+    text-align: center;
+    border-radius: 6px !important
+    
+}
+
+.cardbotao {
+    display: flex !important;
+    flex-direction: column;
+    gap: 24px;
+    width: 270px;
+    padding-left: 6% !important
+}
+
+.card1 {
+    display: flex
 }
