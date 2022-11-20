@@ -1,3 +1,6 @@
+@import url('https://fonts.cdnfonts.com/css/dustismo-roman');
+@import url('https://fonts.cdnfonts.com/css/aller');
+
 .imagem2{
     background-image: url(https://images.unsplash.com/photo-1597916829826-02e5bb4a54e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80);
     background-repeat: no-repeat;
@@ -31,7 +34,20 @@
     margin: 10px !important;
 }
 
-
 .texto{
 font-size: 20px !important;
 }
+
+.fonte1{
+    font-family: 'aller', sans-serif !important;
+    font-family: 'Aller Display', sans-serif;
+    font-family: 'Aller Light', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+}
+
+.fonte2{
+    color: #673a14 !important;
+    font-family: 'Dustismo Roman', sans-serif !important;
+ }
+ 

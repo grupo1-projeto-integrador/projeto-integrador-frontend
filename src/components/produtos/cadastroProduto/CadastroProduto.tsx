@@ -8,7 +8,6 @@ import { busca, buscaId, post, put } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/TokensReducers';
 import { toast } from 'react-toastify';
-import Usuario from '../../../models/Usuario';
 
 function CadastroProduto() {
     let history = useNavigate();
@@ -49,7 +48,6 @@ function CadastroProduto() {
         categoria: null,
         usuario: null
     })
-
 
     useEffect(() => {
         getCategoria()

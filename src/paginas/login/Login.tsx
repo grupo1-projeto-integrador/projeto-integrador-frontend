@@ -98,9 +98,9 @@ function Login() {
               color="textPrimary"
               component="h3"
               align="center"
-              className="textos1"
+              className="textos1, fonte2"
             >
-              Seja bem-vindo!
+              Seja bem-vinde à Colheita Fresca!
             </Typography>
             <TextField
               onChange={(event: ChangeEvent<HTMLInputElement>) =>

@@ -145,14 +145,14 @@ function CadastroUsuario() {
               color="textPrimary"
               component="h3"
               align="center"
-              className="textos2"
+              className="textos2, fonte2"
             >
               Cadastro
             </Typography>
             <FormControl className="form">
-              <FormLabel
+              <FormLabel className='fonte1'
                 id="tipoUsuario">Você é um...</FormLabel>
-              <RadioGroup
+              <RadioGroup className='fonte1'
                 row
                 aria-labelledby="tipoDeUsuario"
                 value={user.tipo}
@@ -160,11 +160,11 @@ function CadastroUsuario() {
                 id="tipo"
                 name="tipo"
               >
-                <FormControlLabel value="consumidor" control={<Radio />} label="Consumidor"/>
+                <FormControlLabel value="consumidor" control={<Radio />} label="Consumidor" />
                 <FormControlLabel value="vendedor" control={<Radio />} label="Fornecedor"/>
               </RadioGroup>
             </FormControl>
-            <TextField
+            <TextField className='fonte1'
               value={user.nome}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="nome"
