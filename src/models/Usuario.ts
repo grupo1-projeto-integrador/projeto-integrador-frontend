@@ -8,7 +8,6 @@ interface Usuario {
     cnpj:string;
     endereco:string;
     tipo:string;
-    Produto?: Produto[]
 }
 
 export default Usuario;
