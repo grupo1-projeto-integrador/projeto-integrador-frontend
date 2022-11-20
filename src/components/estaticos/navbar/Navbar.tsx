@@ -119,13 +119,7 @@ function Navbar() {
                     </Typography>
                 </Box>
                 </Link>
-                <Link to="/formularioCategoria" className="text-decorator-none">
-                <Box mx={1.5} className='cursor'>
-                    <Typography variant="h6" color="inherit" className='fonte'>
-                        Cadastrar Categoria
-                    </Typography>
-                </Box>
-                </Link>
+                {novaCategoria}
                     <Box mx={1.5} className='cursor' onClick={goLogout}>
                         <Typography variant="h6" color="inherit" className='fonte'>
                             Logout
