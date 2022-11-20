@@ -18,6 +18,7 @@ function TabProduto() {
           <Tabs className="cor" centered indicatorColor="secondary" onChange={handleChange}>
             <Tab label="Todos os produtos" value="1" className='titulo'/>
             <Tab label="Sobre a Colheita Fresca" value="2" className='titulo'/>
+            <Tab label="Quem somos" value="3" className='titulo'/>
           </Tabs>
         </AppBar>
         <TabPanel value="1" >
@@ -27,7 +28,11 @@ function TabProduto() {
         </TabPanel>
         <TabPanel value="2">
           <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" className="titulo">Sobre a Colheita Fresca</Typography>
-          <Typography variant="body1" gutterBottom color="textPrimary" align="justify" className='fonte1'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Venenatis a condimentum vitae sapien pellentesque habitant morbi. Mauris ultrices eros in cursus turpis. Volutpat maecenas volutpat blandit aliquam etiam. Dictumst quisque sagittis purus sit amet volutpat consequat mauris nunc. Quam quisque id diam vel quam. Dapibus ultrices in iaculis nunc sed augue. Sed nisi lacus sed viverra tellus in. Amet facilisis magna etiam tempor orci eu lobortis elementum nibh. Sit amet nisl suscipit adipiscing bibendum est. Varius vel pharetra vel turpis nunc eget lorem dolor sed. Enim sed faucibus turpis in eu mi bibendum neque egestas.</Typography>
+          <Typography variant="body1" gutterBottom color="textPrimary" align="justify" className='fonte1'>Nossa missão é facilitar a conexão de pessoas com produtos orgânicos, diretamente com produtores familiares. Temos como objetivos diminuir o desperdício de alimentos, estimular o consumo de alimentos orgânicos com qualidade e preço justo, incentivar o convívio social e assistir famílias que se encontram em condições de vulnerabilidade.</Typography>
+        </TabPanel>
+        <TabPanel value="3">
+          <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" className="titulo">Sobre a Colheita Fresca</Typography>
+          <Typography variant="body1" gutterBottom color="textPrimary" align="justify" className='fonte1'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Venenatis a condimentum vitae sapien pellentesque habitant morbi.</Typography>
           <Box display="flex" justifyContent="center">
                         <Box justifyContent="center" className='p-30'>
                                 <img className='br-50' src="https://i.imgur.com/DYIs2rv.jpg" alt="Logotipo" height={150} width={150}/>
@@ -57,9 +62,7 @@ function TabProduto() {
                                 <img className='br-50' src="https://i.imgur.com/iUVDOW0.jpg" alt="Logotipo" height={150} width={150}/>
                                 <Typography variant="h6" gutterBottom color="textPrimary" component="h3" align="center" className='titulo, fonte2'>Stephany Souza</Typography>
                                 </Box>
-                                
                     </Box>
-
         </TabPanel>
       </TabContext>
     </>
