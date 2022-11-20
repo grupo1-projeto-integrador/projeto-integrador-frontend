@@ -4,10 +4,11 @@ import { Card, CardActions, CardContent, Button, Typography } from '@material-ui
 import Produto from '../../../models/Produto'
 import { Box } from "@mui/material";
 import './ListaProduto.css';
-import { busca } from '../../../services/Service';
+import { busca, buscaId } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/TokensReducers';
 import { toast } from 'react-toastify';
+import Usuario from '../../../models/Usuario';
 
 function ListaProduto() {
     const [produto, setProduto] = useState<Produto[]>([])
@@ -15,6 +16,39 @@ function ListaProduto() {
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
     );
+
+    const userId = useSelector<TokenState, TokenState['id']>(
+        (state) => state.id
+    )
+
+    const tipo = useSelector<TokenState, TokenState["tipo"]>(
+        (state) => state.tipo
+      );
+
+      
+      async function getUserById(id: number) {
+        await buscaId(`usuarios/${id}`, setUsuario, {
+          headers: {
+            Authorization: token,
+          },
+        });
+      }
+    
+    
+      useEffect(() => {
+        getUserById(+userId);
+      });
+
+    const [usuario, setUsuario] = useState<Usuario>({
+        id: +userId,
+        nome: "",
+        email: "",
+        senha: "",
+        cpf: "",
+        cnpj: "",
+        endereco:"",
+        tipo: tipo
+      });
 
     useEffect(()=>{
         if(token == ''){
@@ -44,6 +78,7 @@ function ListaProduto() {
         getProduto()
     }, [produto.length])
 
+
     return (
         <div className='card1' >
         {
@@ -71,8 +106,12 @@ function ListaProduto() {
                         <Typography variant="body2" component="p">
                             {produto.categoria?.titulo}
                         </Typography>
+                        <Typography variant="body2" component="p">
+                            Vendido por: {produto.usuario?.nome}
+                        </Typography>
                     </CardContent>
-                    <CardActions className='cardbotao'>
+                    {usuario.tipo ==='vendedor'? 
+                    (<>                <CardActions className='cardbotao'>
                         <Box display="flex" justifyContent="center" mb={1.5}>
                             <Link to={`/formularioProduto/${produto.id}`} className="text-decorator-none" >
                                 <Box mx={1}>
@@ -90,6 +129,10 @@ function ListaProduto() {
                             </Link>
                         </Box>
                     </CardActions>
+                        </>
+                        ):
+                    (<>
+                    </>)}
                 </Card>
             </Box>
             ))

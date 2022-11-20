@@ -1,4 +1,30 @@
+@import url('https://fonts.cdnfonts.com/css/dustismo-roman');
+@import url('https://fonts.cdnfonts.com/css/aller');
+
 .topo {
     margin-top: 20px;
 }
 
+.fonte1{
+    font-family: 'aller', sans-serif !important;
+    font-family: 'Aller Display', sans-serif;
+    font-family: 'Aller Light', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+}
+
+.fonte2{
+    color: #673a14 !important;
+    font-family: 'Dustismo Roman', sans-serif !important;
+    font-weight: 500;
+ }
+
+ .fonte3{
+    color: #FEFAE0 !important;
+    font-family: 'aller', sans-serif !important;
+    font-family: 'Aller Display', sans-serif;
+    font-family: 'Aller Light', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+}
+ 

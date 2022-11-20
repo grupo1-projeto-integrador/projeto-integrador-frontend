@@ -1,18 +1,21 @@
+@import url('https://fonts.cdnfonts.com/css/aller');
+
 .box1{
-    background-color: #3F51B5;
+    background-color: #606C38;
     height: 120px;
 }
 
 .box2{
-    background-color: #303F9F;
+    background-color: #606C38;
     height: 60px;
 }
 
 .redes{
     font-size: 60px !important;
-    color: white;
+    color: #FEFAE0;
 }
 
 .textos{
-   color: white;
+   color: #FEFAE0;
+   font-family: 'aller', sans-serif !important;
 }
