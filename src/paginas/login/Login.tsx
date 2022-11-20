@@ -6,7 +6,7 @@ import "./Login.css";
 import UserLogin from "../../models/UserLogin";
 import { login } from "../../services/Service";
 import { useDispatch } from 'react-redux';
-import { addToken, addId } from '../../store/tokens/Actions';
+import { addToken, addId, addTipo } from '../../store/tokens/Actions';
 import { toast } from 'react-toastify';
 
 function Login() {
@@ -17,6 +17,7 @@ function Login() {
     id: 0,
     nome: "",
     usuario: "",
+    tipo:"",
     foto: "",
     senha: "",
     token: "",
@@ -26,6 +27,7 @@ function Login() {
     id: 0,
     nome: '',
     usuario: "",
+    tipo:"",
     foto: "",
     senha: "",
     token: "",
@@ -48,10 +50,12 @@ function Login() {
   useEffect(() => {
     if (respUserLogin.token !== '') {
       dispatch(addToken(respUserLogin.token))
-      dispatch(addId(respUserLogin.id.toString()))
-      navigate("/home");
+      dispatch(addTipo(respUserLogin.tipo));
+      dispatch(addId(respUserLogin.id.toString()));
+      navigate('/home')
+      console.log(token)
     }
-  }, [respUserLogin.token]);
+  },[respUserLogin.token]);
 
   async function logar(event: ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -69,7 +73,6 @@ function Login() {
                 progress: undefined,
             });
         } catch (error) {
-            alert('Dados do usuário incorretos.');
             toast.error('Dados do usuário incorretos', {
                 position: "top-right",
                 autoClose: 2000,
@@ -85,7 +88,7 @@ function Login() {
    }
 
   return (
-    <Grid container direction="row" justifyContent="center" alignItems="center">
+    <Grid container direction="row" justifyContent="center" alignItems="center" className="box">
       <Grid alignItems="center" xs={6}>
         <Box paddingX={20}>
           <form onSubmit={logar}>
@@ -97,16 +100,15 @@ function Login() {
               align="center"
               className="textos1"
             >
-              Entrar
+              Seja bem-vindo!
             </Typography>
             <TextField
               onChange={(event: ChangeEvent<HTMLInputElement>) =>
                 updateModel(event)
-                
               }
               value={userLogin.usuario}
               id="email"
-              label="email"
+              label="Email"
               variant="outlined"
               name="usuario"
               margin="normal"
@@ -118,7 +120,7 @@ function Login() {
               }
               value={userLogin.senha}
               id="senha"
-              label="senha"
+              label="Senha"
               variant="outlined"
               name="senha"
               margin="normal"
@@ -126,7 +128,7 @@ function Login() {
               fullWidth
             />
             <Box marginTop={2} textAlign="center">
-              <Button type="submit" variant="contained" color="primary">
+              <Button type="submit" variant="contained" color="primary" disabled={!userLogin.usuario || ! userLogin.senha} className='botao'>
                 Logar
               </Button>
             </Box>
@@ -134,7 +136,7 @@ function Login() {
           <Box display="flex" justifyContent="center" marginTop={2}>
             <Box marginRight={1}>
               <Typography variant="subtitle1" gutterBottom align="center">
-                Não tem uma conta?
+                Ainda não tem uma conta?
               </Typography>
             </Box>
             <Link to="/cadastrousuario">

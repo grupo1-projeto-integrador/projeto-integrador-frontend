@@ -9,6 +9,7 @@ import { busca, buscaId, post, put } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/TokensReducers';
 import { toast } from 'react-toastify';
+import Usuario from '../../../models/Usuario';
 
 function CadastroProduto() {
     let history = useNavigate();
@@ -54,13 +55,6 @@ function CadastroProduto() {
         (state) => state.id
     )
 
-    const [usuario, setUsuario] = useState<Usuario>({
-        id: +userId,
-        nome: '',
-        usuario: '',
-        senha: '',
-        foto: ''
-    })
 
     useEffect(() => {
         setProduto({
