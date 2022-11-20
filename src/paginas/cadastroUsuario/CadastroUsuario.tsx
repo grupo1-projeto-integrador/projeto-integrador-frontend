@@ -15,8 +15,8 @@ function CadastroUsuario() {
     nome: "",
     email: "",
     senha: "",
-    cpf: "",
-    cnpj: "",
+    cpf: null,
+    cnpj: null,
     endereco: "",
     tipo: "",
 
@@ -27,8 +27,8 @@ function CadastroUsuario() {
     nome: "",
     email: "",
     senha: "",
-    cpf: "",
-    cnpj: "",
+    cpf: null,
+    cnpj: null,
     endereco: "",
     tipo: "",
   });
@@ -108,7 +108,6 @@ function CadastroUsuario() {
       margin="normal"
       fullWidth
     />
-    user.cpf = "000.000.000-00"
   } else {
     dadoComponent = <TextField
       value={user.cpf}
@@ -120,7 +119,6 @@ function CadastroUsuario() {
       margin="normal"
       fullWidth
     />
-    user.cnpj = "00.000.000/0000-00"
   }
 
   const [formCadastro, setFormCadastro] = useState(true)
