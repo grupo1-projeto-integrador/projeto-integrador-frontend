@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/aller');
+
 .cursor{
     cursor: pointer;
     color: #FEFAE0;
@@ -9,4 +11,16 @@
 
 .color{
     background-color: #606C38 !important;
+}
+
+.menu{
+    margin-right: auto;
+}
+
+.fonte{
+    font-family: 'aller', sans-serif !important;
+    font-family: 'Aller Display', sans-serif;
+    font-family: 'Aller Light', sans-serif;
+    font-style: normal;
+    font-weight: 300;
 }

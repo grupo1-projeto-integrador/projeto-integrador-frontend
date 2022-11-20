@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/aller');
+
 .box1{
     background-color: #606C38;
     height: 120px;
@@ -15,4 +17,5 @@
 
 .textos{
    color: #FEFAE0;
+   font-family: 'aller', sans-serif !important;
 }
