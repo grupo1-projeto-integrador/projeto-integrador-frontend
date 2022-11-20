@@ -125,7 +125,7 @@ function Login() {
             />
             <Box marginTop={2} textAlign="center">
               <Button type="submit" variant="contained" color="primary" disabled={!userLogin.usuario || ! userLogin.senha} className='botao'>
-                Logar <img src="https://www.svgrepo.com/show/15579/tree.svg" alt="" className="botao"/>
+                Logar
               </Button>
             </Box>
           </form>
