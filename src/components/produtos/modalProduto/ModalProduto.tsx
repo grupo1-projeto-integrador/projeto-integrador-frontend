@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import { Button } from "@material-ui/core"
+import { Button, Typography } from "@material-ui/core"
 import { Box, Modal } from "@mui/material";
 import CloseIcon from '@material-ui/icons/Close';
 import './ModalProduto.css';
 import CadastroProduto from '../cadastroProduto/CadastroProduto';
+import { useDispatch, useSelector } from 'react-redux';
+import Usuario from '../../../models/Usuario';
+import { TokenState } from '../../../store/tokens/TokensReducers';
+import { addTipo} from '../../../store/tokens/Actions';
+import { addToken } from '../../../store/tokens/Actions';
+import { buscaId } from '../../../services/Service';
 
 
 function getModalStyle() {
@@ -44,6 +50,46 @@ function ModalProduto() {
         setOpen(false);
     };
 
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
+
+ 
+    const dispatch = useDispatch();
+
+    const userId = useSelector<TokenState, TokenState['id']>(
+        (state) => state.id
+    )
+
+    const tipo = useSelector<TokenState, TokenState["tipo"]>(
+        (state) => state.tipo
+      );
+      
+      async function getUserById(id: number) {
+        await buscaId(`usuarios/${id}`, setUsuario, {
+          headers: {
+            Authorization: token,
+          },
+        });
+      }
+    
+    
+      useEffect(() => {
+        getUserById(+userId);
+      });
+
+    const [usuario, setUsuario] = useState<Usuario>({
+        id: +userId,
+        nome: "",
+        email: "",
+        senha: "",
+        cpf: "",
+        cnpj: "",
+        endereco:"",
+        tipo: tipo
+      });
+
+
     const body = (
         <div style={modalStyle} className={classes.paper}>
             <Box display="flex" justifyContent="flex-end" className="cursor">
@@ -56,21 +102,32 @@ function ModalProduto() {
         </div>
     );
 
+let modalComp;
+
+if(usuario.tipo ==="vendedor"){
+    modalComp =         <div>
+    <Button
+        variant="outlined"
+        className="btnModal"
+        onClick={handleOpen}>Novo Produto</Button>
+    <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+    >
+        {body}
+    </Modal>
+</div>
+}else{
+    modalComp =   ''
+
+}
+
     return (
-        <div>
-            <Button
-                variant="outlined"
-                className="btnModal"
-                onClick={handleOpen}>Novo Produto</Button>
-            <Modal
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="simple-modal-title"
-                aria-describedby="simple-modal-description"
-            >
-                {body}
-            </Modal>
-        </div>
+        <>
+ {modalComp}
+ </>
     );
 }
 export default ModalProduto

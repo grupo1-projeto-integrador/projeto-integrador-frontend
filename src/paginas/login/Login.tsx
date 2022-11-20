@@ -6,7 +6,7 @@ import "./Login.css";
 import UserLogin from "../../models/UserLogin";
 import { login } from "../../services/Service";
 import { useDispatch } from 'react-redux';
-import { addToken, addId } from '../../store/tokens/Actions';
+import { addToken, addId, addTipo } from '../../store/tokens/Actions';
 import { toast } from 'react-toastify';
 
 function Login() {
@@ -17,6 +17,7 @@ function Login() {
     id: 0,
     nome: "",
     usuario: "",
+    tipo:"",
     foto: "",
     senha: "",
     token: "",
@@ -26,6 +27,7 @@ function Login() {
     id: 0,
     nome: '',
     usuario: "",
+    tipo:"",
     foto: "",
     senha: "",
     token: "",
@@ -48,10 +50,12 @@ function Login() {
   useEffect(() => {
     if (respUserLogin.token !== '') {
       dispatch(addToken(respUserLogin.token))
-      dispatch(addId(respUserLogin.id.toString()))
-      navigate("/home");
+      dispatch(addTipo(respUserLogin.tipo));
+      dispatch(addId(respUserLogin.id.toString()));
+      navigate('/home')
+      console.log(token)
     }
-  }, [respUserLogin.token]);
+  },[respUserLogin.token]);
 
   async function logar(event: ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
