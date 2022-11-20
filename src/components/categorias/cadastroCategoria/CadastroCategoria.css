@@ -4,4 +4,12 @@
 
 .cor-botao {
     background-color: #4d924d !important;
+    font-weight: bold !important;
+    
+}
+
+.botaoCadastro {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }

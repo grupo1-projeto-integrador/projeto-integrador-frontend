@@ -45,11 +45,11 @@ function ListaProduto() {
     }, [produto.length])
 
     return (
-        <>
+        <div className='card1' >
         {
             produto.map(produto =>(
             <Box m={2} >
-                <Card variant="outlined">
+                <Card variant="outlined" className= "card">
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>
                             Produtos
@@ -72,7 +72,7 @@ function ListaProduto() {
                             {produto.categoria?.titulo}
                         </Typography>
                     </CardContent>
-                    <CardActions>
+                    <CardActions className='cardbotao'>
                         <Box display="flex" justifyContent="center" mb={1.5}>
                             <Link to={`/formularioProduto/${produto.id}`} className="text-decorator-none" >
                                 <Box mx={1}>
@@ -94,7 +94,7 @@ function ListaProduto() {
             </Box>
             ))
             }
-        </>
+        </div>
         );
 }
 
