@@ -3,7 +3,7 @@
  }
  
  .imagem{
-     background-image: url(https://i.imgur.com/d5bMdDJ.jpg);
+     background-image: url(https://images.unsplash.com/photo-1598030304671-5aa1d6f21128?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80);
      background-repeat: no-repeat;
      width: 100vh;
      min-height: 100vh;
@@ -15,6 +15,13 @@
      text-decoration: none;
  }
 
- .cor-botao {
-    background-color: #4d924d !important;
+ .botao {
+    background-color: #86cb86 !important;
+    display: flex;
+    min-width: 30px;
+    min-height: 40px;
+}
+
+.box{
+    background-color: rgb(254, 250, 224);
 }
