@@ -39,7 +39,7 @@ function TabProduto() {
                         <Link to='/home' className='texto-decorator-none'>
                                 <img className='br-50' src="https://i.imgur.com/DYIs2rv.jpg" alt="Logotipo" height={150} width={150}/></Link>
                                 <Typography variant="h6" gutterBottom color="textPrimary" component="h3" align="center" className='titulo, fonte2'>Alexandra Reis</Typography>
-                    <Typography variant="h6" gutterBottom color="textPrimary" component="h3" align="center"><span ><Link to="https://github.com/AlexandraReis" className="legenda">GitHub | </Link><Link to="https://www.linkedin.com/in/alexandra-reis-dev/" className="legenda">LinkedIn</Link></span>
+                    <Typography variant="h6" gutterBottom color="textPrimary" component="h3" align="center"><span ><a href="https://github.com/AlexandraReis" className="legenda">GitHub | </a><a href="https://www.linkedin.com/in/alexandra-reis-dev/" className="legenda">LinkedIn</a></span>
                    </Typography>
                                 </Box>
                                 <Box justifyContent="center" className='p-30'>
