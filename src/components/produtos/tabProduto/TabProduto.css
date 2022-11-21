@@ -10,6 +10,7 @@
     background-color: #606c38 !important;
 }
 
+
 .fonte1{
     color: #673a14 !important;
     font-family: 'aller', sans-serif !important;
@@ -17,7 +18,13 @@
     font-family: 'Aller Light', sans-serif;
     font-style: normal;
     font-weight: 300;
+    display: flex;
+    text-align: justify !important;
+   max-width: 650px;
+   margin: auto !important;
+   
 }
+
 
 .br-50 {
     border-radius: 50% !important;
@@ -25,4 +32,17 @@
 
 .p-30 {
     padding: 30px;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.legenda {
+    color: #673a14 !important;
+    font-family: 'aller', sans-serif !important;
+    display: inline;
+    justify-content: center;
+    text-decoration: none;
+    font-size: medium;
 }

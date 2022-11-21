@@ -91,6 +91,16 @@ function Login() {
     <Grid container direction="row" justifyContent="center" alignItems="center" className="box">
       <Grid alignItems="center" xs={6}>
         <Box paddingX={20}>
+          <Box display="flex" justifyContent="center">
+                <Box>
+                  <img
+                    src="https://i.imgur.com/nlzsr6P.png"
+                    alt="Logotipo"
+                    height={150}
+                    width={125}
+                  />
+                </Box>
+              </Box>
           <form onSubmit={logar}>
             <Typography
               variant="h3"
@@ -128,7 +138,7 @@ function Login() {
               fullWidth
             />
             <Box marginTop={2} textAlign="center">
-              <Button type="submit" variant="contained" color="primary" disabled={!userLogin.usuario || ! userLogin.senha} className='botao'>
+              <Button type="submit" variant="contained" color="primary" disabled={!userLogin.usuario || ! userLogin.senha} className='cor-botao'>
                 Logar
               </Button>
             </Box>

@@ -109,8 +109,9 @@ function CadastroCategoria() {
           color="textSecondary"
           component="h1"
           align="center"
+          className="fonte2"
         >
-          Formulário de Cadastro Categoria
+          Cadastro de Categoria
         </Typography>
         <TextField
           value={categoria.titulo}

@@ -6,7 +6,7 @@
  }
  
  .imagem{
-     background-image: url(https://images.unsplash.com/photo-1598030304671-5aa1d6f21128?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80);
+     background-image: url(https://i.imgur.com/tR7s44o.jpg);
      background-repeat: no-repeat;
      width: 100vh;
      min-height: 100vh;
@@ -41,3 +41,11 @@
     color: #673a14 !important;
     font-family: 'Dustismo Roman', sans-serif !important;
  }
+
+ .cor-botao {
+    background-color: #606c38 !important;
+    font-weight: 500 !important;
+    font-family: 'aller', sans-serif !important;
+    color: #FEFAE0 !important;
+    
+}
