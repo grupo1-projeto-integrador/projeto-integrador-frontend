@@ -125,12 +125,6 @@ function CadastroProduto() {
         <Container maxWidth="sm" className="topo, fonte1">
             <form onSubmit={onSubmit} >
                 <Typography variant="h4" color="textSecondary" component="h1" align="center" className='fonte2'>Cadastro de Produto</Typography>
-                <TextField value={produto.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="nome" label="Nome" variant="outlined" name="nome" margin="normal" fullWidth />
-                <TextField value={produto.valor} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="valor" label="Valor" name="valor" variant="outlined" margin="normal" fullWidth />
-                <TextField value={produto.kg} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="kg" label="Kg" name="kg" variant="outlined" margin="normal" fullWidth />
-                <TextField value={produto.estoque} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="estoque" label="Estoque" name="estoque" variant="outlined" margin="normal" fullWidth />
-                <TextField value={produto.imagem} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="imagem" label="Imagem" name="imagem" variant="outlined" margin="normal" fullWidth />
-
                 <FormControl >
                     <InputLabel id="demo-simple-select-helper-label" className='fonte1'>Categoria </InputLabel>
                     <Select
@@ -149,6 +143,12 @@ function CadastroProduto() {
                     
                     </Select>
                     <FormHelperText className='fonte1'>Escolha uma categoria para o produto</FormHelperText>
+                <TextField value={produto.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="nome" label="Nome" variant="outlined" name="nome" margin="normal" fullWidth />
+                <TextField value={produto.valor} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="valor" label="Valor" name="valor" variant="outlined" margin="normal" fullWidth />
+                <TextField value={produto.kg} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="kg" label="Kg" name="kg" variant="outlined" margin="normal" fullWidth />
+                <TextField value={produto.estoque} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="estoque" label="Estoque" name="estoque" variant="outlined" margin="normal" fullWidth />
+                <TextField value={produto.imagem} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="imagem" label="Imagem" name="imagem" variant="outlined" margin="normal" fullWidth />
+
                     <Button type="submit" variant="contained" disabled={categoria.id === 0} color="primary" className='fonte3'>
                         Finalizar
                     </Button>
