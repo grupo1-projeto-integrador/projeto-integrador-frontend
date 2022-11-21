@@ -149,7 +149,7 @@ function CadastroProduto() {
                     
                     </Select>
                     <FormHelperText className='fonte1'>Escolha uma categoria para o produto</FormHelperText>
-                    <Button type="submit" variant="contained" disabled={categoria.id === 0} color="primary" className='fonte3'>
+                    <Button type="submit" variant="contained" disabled={categoria.id === 0} className='fonte3, botao'>
                         Finalizar
                     </Button>
                 </FormControl>
