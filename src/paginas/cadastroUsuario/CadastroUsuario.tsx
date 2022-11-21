@@ -3,7 +3,17 @@ import React, { useState, useEffect, ChangeEvent } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Usuario from "../../models/Usuario";
 import { cadastroUsuario } from "../../services/Service";
-import { Grid, Typography, Button, TextField, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup } from "@material-ui/core";
+import {
+  Grid,
+  Typography,
+  Button,
+  TextField,
+  FormControl,
+  FormControlLabel,
+  FormLabel,
+  Radio,
+  RadioGroup,
+} from "@material-ui/core";
 import "./CadastroUsuario.css";
 import { toast } from "react-toastify";
 
@@ -19,7 +29,6 @@ function CadastroUsuario() {
     cnpj: null,
     endereco: "",
     tipo: "",
-
   });
 
   const [userResult, setUserResult] = useState<Usuario>({
@@ -50,36 +59,35 @@ function CadastroUsuario() {
     });
   }
 
-
   async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
     if (confirmarSenha === user.senha) {
       try {
-        await cadastroUsuario('/usuarios/cadastrar', user, setUserResult);
-             toast.success('Usuário cadastrado com sucesso', {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        theme: "colored",
-        progress: undefined,
-    })
+        await cadastroUsuario("/usuarios/cadastrar", user, setUserResult);
+        toast.success("Usuário cadastrado com sucesso", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined,
+        });
       } catch (error) {
-             toast.error('Falha interna ao cadastrar', {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        theme: "colored",
-        progress: undefined,
-    });
+        toast.error("Falha interna ao cadastrar", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined,
+        });
       }
     } else {
-      toast.error('As senhas não conferem, tente novamente', {
+      toast.error("As senhas não conferem, tente novamente", {
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,
@@ -88,53 +96,65 @@ function CadastroUsuario() {
         draggable: false,
         theme: "colored",
         progress: undefined,
-    });
+      });
 
-      setUser({ ...user, senha: '' });
-      setConfirmarSenha(''); 
+      setUser({ ...user, senha: "" });
+      setConfirmarSenha("");
     }
   }
-
 
   var dadoComponent;
   if (user.tipo == "vendedor") {
-    dadoComponent = <TextField
-      value={user.cnpj}
-      onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-      id="cnpj"
-      label="Cnpj"
-      variant="outlined"
-      name="cnpj"
-      margin="normal"
-      fullWidth
-    />
+    dadoComponent = (
+      <TextField
+        value={user.cnpj}
+        onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+        id="cnpj"
+        label="Cnpj"
+        variant="outlined"
+        name="cnpj"
+        margin="normal"
+        fullWidth
+      />
+    );
   } else {
-    dadoComponent = <TextField
-      value={user.cpf}
-      onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-      id="cpf"
-      label="Cpf"
-      variant="outlined"
-      name="cpf"
-      margin="normal"
-      fullWidth
-    />
+    dadoComponent = (
+      <TextField
+        value={user.cpf}
+        onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+        id="cpf"
+        label="Cpf"
+        variant="outlined"
+        name="cpf"
+        margin="normal"
+        fullWidth
+      />
+    );
   }
 
-  const [formCadastro, setFormCadastro] = useState(true)
+  const [formCadastro, setFormCadastro] = useState(true);
 
-  const padraoEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+  const padraoEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
   useEffect(() => {
-    if(user.nome.length >= 2 && user.email.match(padraoEmail) && user.senha.length>3 && user.senha ===confirmarSenha) {
-      setFormCadastro(false)
+    if (
+      user.nome.length >= 2 &&
+      user.email.match(padraoEmail) &&
+      user.senha.length > 3 &&
+      user.senha === confirmarSenha
+    ) {
+      setFormCadastro(false);
     }
-  }, [user])
-
-
+  }, [user]);
 
   return (
-    <Grid container direction="row" justifyContent="center" alignItems="center" className="box">
+    <Grid
+      container
+      direction="row"
+      justifyContent="center"
+      alignItems="center"
+      className="box"
+    >
       <Grid item xs={6} className="imagem2"></Grid>
       <Grid item xs={6} alignItems="center">
         <Box paddingX={10}>
@@ -150,9 +170,11 @@ function CadastroUsuario() {
               Cadastro
             </Typography>
             <FormControl className="form">
-              <FormLabel className='fonte1'
-                id="tipoUsuario">Você é um...</FormLabel>
-              <RadioGroup className='fonte1'
+              <FormLabel className="fonte1" id="tipoUsuario">
+                Você é um...
+              </FormLabel>
+              <RadioGroup
+                className="fonte1"
                 row
                 aria-labelledby="tipoDeUsuario"
                 value={user.tipo}
@@ -160,11 +182,20 @@ function CadastroUsuario() {
                 id="tipo"
                 name="tipo"
               >
-                <FormControlLabel value="consumidor" control={<Radio />} label="Consumidor" />
-                <FormControlLabel value="vendedor" control={<Radio />} label="Fornecedor"/>
+                <FormControlLabel
+                  value="consumidor"
+                  control={<Radio />}
+                  label="Consumidor"
+                />
+                <FormControlLabel
+                  value="vendedor"
+                  control={<Radio />}
+                  label="Fornecedor"
+                />
               </RadioGroup>
             </FormControl>
-            <TextField className='fonte1'
+            <TextField
+              className="fonte1"
               value={user.nome}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="nome"
@@ -225,11 +256,17 @@ function CadastroUsuario() {
                   variant="contained"
                   color="secondary"
                   className="btnCancelar"
+                  style={{ marginRight: 6 }}
                 >
                   Cancelar
                 </Button>
               </Link>
-              <Button type="submit" variant="contained" color="primary" disabled={formCadastro}>
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                disabled={formCadastro}
+              >
                 Cadastrar
               </Button>
             </Box>
