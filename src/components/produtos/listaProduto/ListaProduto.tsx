@@ -108,7 +108,7 @@ function ListaProduto() {
         return (
           <Box m={2}>
             <Card variant="outlined" className="card">
-              <CardContent>
+              <CardContent className="cardInside">
                 <Typography color="textSecondary" gutterBottom>
                   Produtos
                 </Typography>
@@ -122,7 +122,7 @@ function ListaProduto() {
                   alt=""
                   style={{
                     paddingTop: 8,
-                    paddingBottom: 8
+                    paddingBottom: 8,
                   }}
                 />
                 <Typography variant="body2" component="p">
@@ -144,46 +144,46 @@ function ListaProduto() {
                   Vendido por: {produto.usuario?.nome}
                 </Typography>
               </CardContent>
-              {usuario.tipo === "vendedor" ? (
-                <>
-                  {" "}
-                  <CardActions className="cardbotao">
-                    <Box display="flex" justifyContent="center" mb={1.5}>
-                      <Link
-                        to={`/formularioProduto/${produto.id}`}
-                        className="text-decorator-none"
-                      >
-                        <Box mx={1}>
-                          <Button
-                            variant="contained"
-                            className="marginLeft, btnAtualizar"
-                            size="small"
-                            color="primary"
-                          >
-                            atualizar
-                          </Button>
-                        </Box>
-                      </Link>
-                      <Link
-                        to={`/deletarProduto/${produto.id}`}
-                        className="text-decorator-none"
-                      >
-                        <Box mx={1}>
-                          <Button
-                            variant="contained"
-                            className="btnCancelar  "
-                            size="small"
-                            color="secondary"
-                          >
-                            deletar
-                          </Button>
-                        </Box>
-                      </Link>
-                    </Box>
-                  </CardActions>
-                </>
-              ) : (
-                <></>
+              {usuario.tipo === "vendedor" && (
+                <CardActions className="cardbotao">
+                  <Box
+                    display="flex"
+                    flexDirection="column"
+                    justifyContent="center"
+                  >
+                    <Link
+                      to={`/formularioProduto/${produto.id}`}
+                      className="text-decorator-none"
+                    >
+                      <Box mx={1}>
+                        <Button
+                          variant="contained"
+                          className="btnAtualizar"
+                          size="small"
+                          color="primary"
+                          style={{ marginBottom: 6 }}
+                        >
+                          atualizar
+                        </Button>
+                      </Box>
+                    </Link>
+                    <Link
+                      to={`/deletarProduto/${produto.id}`}
+                      className="text-decorator-none"
+                    >
+                      <Box mx={1}>
+                        <Button
+                          variant="contained"
+                          className="btnCancelar"
+                          size="small"
+                          color="secondary"
+                        >
+                          deletar
+                        </Button>
+                      </Box>
+                    </Link>
+                  </Box>
+                </CardActions>
               )}
             </Card>
           </Box>
