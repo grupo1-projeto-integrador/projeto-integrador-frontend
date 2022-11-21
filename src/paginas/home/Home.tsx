@@ -68,11 +68,6 @@ function Home() {
               <Box marginRight={1}>
                 <ModalProduto />
               </Box>
-              <Link to="/produtos" className="text-decorator-none">
-                <Button variant="outlined" className="botao">
-                  Ver Produtos
-                </Button>
-              </Link>
             </Box>
           </div>
         </Grid>
