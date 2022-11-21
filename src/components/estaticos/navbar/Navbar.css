@@ -2,7 +2,7 @@
 
 .cursor{
     cursor: pointer;
-    color: #FEFAE0;
+    color: hsl(52, 94%, 94%);
 }
 
 .text-decorator-none {

@@ -73,7 +73,7 @@ function Navbar() {
     if(usuario.tipo ==="vendedor"){
     novaCategoria =                <> <Link to="/formularioCategoria" className="text-decorator-none">
         <Box mx={1} className='cursor'>
-            <Typography variant="h6" color="inherit">
+            <Typography variant="h6" color="inherit" className="fonte">
                 Cadastrar Categoria
             </Typography>
         </Box>
