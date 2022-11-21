@@ -86,28 +86,20 @@ function ListaProduto() {
             <Box m={2} >
                 <Card variant="outlined" className= "card">
                     <CardContent>
-                        <Typography color="textSecondary" gutterBottom>
-                            Produtos
-                        </Typography>
                         <Typography variant="h5" component="h2">
                             {produto.nome}
                         </Typography>
                         <Typography variant="body2" component="p">
-                            {produto.valor}
+                            Valor:{produto.valor}
                         </Typography>
                         <Typography variant="body2" component="p">
-                            {produto.kg}
+                            Peso: {produto.kg}kg
                         </Typography>
                         <Typography variant="body2" component="p">
-                            {produto.estoque}
-                        </Typography><Typography variant="body2" component="p">
-                            {produto.imagem}
-                        </Typography>
+                            Estoque: {produto.estoque}
+                            </Typography>
                         <Typography variant="body2" component="p">
-                            {produto.categoria?.titulo}
-                        </Typography>
-                        <Typography variant="body2" component="p">
-                            Vendido por: {produto.usuario?.nome}
+                            Categoria: {produto.categoria?.titulo}
                         </Typography>
                     </CardContent>
                     {usuario.tipo ==='vendedor'? 

@@ -33,7 +33,7 @@ function TabProduto() {
         </TabPanel>
         <TabPanel value="3">
           <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" className="titulo">Sobre a Colheita Fresca</Typography>
-          <Typography variant="body1" gutterBottom color="textPrimary" align="justify" className='fonte1'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Venenatis a condimentum vitae sapien pellentesque habitant morbi.</Typography>
+          <Typography variant="body1" gutterBottom color="textPrimary" align="justify" className='fonte1'>O projeto Colheita Fresca foi idealizado pela equipe de desenvolvedoras formadas pela Generation Brasil no curso de Desenvolvimento Java Full Stack.</Typography>
           <Box display="flex" justifyContent="center" className="wrap">
                         <Box justifyContent="center" className='p-30'>
                         <Link to='/home' className='texto-decorator-none'>
