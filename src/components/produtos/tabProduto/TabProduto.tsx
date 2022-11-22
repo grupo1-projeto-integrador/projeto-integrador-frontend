@@ -39,7 +39,7 @@ function TabProduto() {
           <p><b>1.</b> Colaboração com produtores familiares que compartilham também de nossa missão e valores.</p>
           <p><b>2.</b> Gerando momentos de conexão entre clientes com seus bairros.</p>
           <p><b>3.</b> Conectamos ONG’S que auxiliam famílias em condições de vulnerabilidade.</p>
-          <p><b>4.</b> Plantamos esperança de uma vida melhor para todos. (editado)</p>
+          <p><b>4.</b> Plantamos esperança de uma vida melhor para todos.</p>
 
 </Typography>
         </TabPanel>
