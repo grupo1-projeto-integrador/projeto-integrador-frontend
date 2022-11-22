@@ -167,7 +167,7 @@ function ListaProduto() {
                       <Box mx={1}>
                         <Button
                           variant="contained"
-                          className="btnCancelar"
+                          className="btnDeletar"
                           size="small"
                           color="secondary"
                         >
