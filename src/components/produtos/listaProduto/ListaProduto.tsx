@@ -103,6 +103,8 @@ function ListaProduto() {
               return "https://www.san-lorenzo.com/assets/uploads/riso-carnaroli_1625481745.png";
             case "Banana":
               return "https://ceagesp.gov.br/wp-content/uploads/2019/12/Banana_pratapng-328x328.png";
+            default:
+              return "https://i.imgur.com/nlzsr6P.png";
           }
         };
         return (
