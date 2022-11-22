@@ -29,7 +29,19 @@ function TabProduto() {
         </TabPanel>
         <TabPanel value="2">
           <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" className="titulo">Sobre a Colheita Fresca</Typography>
-          <Typography variant="body1" gutterBottom color="textPrimary" align="justify" className='fonte1'>Nossa missão é facilitar a conexão de pessoas com produtos orgânicos, diretamente com produtores familiares. Temos como objetivos diminuir o desperdício de alimentos, estimular o consumo de alimentos orgânicos com qualidade e preço justo, incentivar o convívio social e assistir famílias que se encontram em condições de vulnerabilidade.</Typography>
+          <Typography variant="body1" gutterBottom color="textPrimary" align="justify" className='fonteqs'>Nós do Colheita Fresca, acreditamos em dar 110%. Onde ajudamos as comunidades agrícolas a crescerem e a promover uma mentalidade voltada para prover o bem ao próximo. Sendo a conexão entre produtores familiares e clientes, além de colaborar com ONGS que atuam pelo combate à fome no Brasil. Acreditamos que a mudança começa com pequenos passos antes de se tornar uma grande conquista.
+          <p>Vamos juntos nesse passo?</p>
+          <p><b>Nossa missão:</b></p>
+          <p>Conectar  você a produtos orgânicos de qualidade, incentivando a conexão humana e conscientizando sobre a urgência de ações para garantir que todos tenham acesso a alimentação.</p>
+          <p><b>Nossos Valores:</b></p>
+          <p>Diminuir o desperdício de alimentos, estimular o consumo de produtos orgânicos com qualidade e encorajar através das lentes da humanidade impactos positivos na vida do próximo. Uma comunidade, um estado e um país por vez.</p>
+          <p><b>Como Trabalhamos:</b></p>
+          <p><b>1.</b> Colaboração com produtores familiares que compartilham também de nossa missão e valores.</p>
+          <p><b>2.</b> Gerando momentos de conexão entre clientes com seus bairros.</p>
+          <p><b>3.</b> Conectamos ONG’S que auxiliam famílias em condições de vulnerabilidade.</p>
+          <p><b>4.</b> Plantamos esperança de uma vida melhor para todos. (editado)</p>
+
+</Typography>
         </TabPanel>
         <TabPanel value="3">
           <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" className="titulo">Sobre a Colheita Fresca</Typography>
