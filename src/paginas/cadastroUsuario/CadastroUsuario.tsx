@@ -3,8 +3,19 @@ import React, { useState, useEffect, ChangeEvent } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Usuario from "../../models/Usuario";
 import { cadastroUsuario } from "../../services/Service";
-import { Grid, Typography, Button, TextField } from "@material-ui/core";
+import {
+  Grid,
+  Typography,
+  Button,
+  TextField,
+  FormControl,
+  FormControlLabel,
+  FormLabel,
+  Radio,
+  RadioGroup,
+} from "@material-ui/core";
 import "./CadastroUsuario.css";
+import { toast } from "react-toastify";
 
 function CadastroUsuario() {
   let navigate = useNavigate();
@@ -14,11 +25,10 @@ function CadastroUsuario() {
     nome: "",
     email: "",
     senha: "",
-    cpf: "",
-    cnpj: "",
+    cpf: null,
+    cnpj: null,
     endereco: "",
     tipo: "",
-    
   });
 
   const [userResult, setUserResult] = useState<Usuario>({
@@ -26,8 +36,8 @@ function CadastroUsuario() {
     nome: "",
     email: "",
     senha: "",
-    cpf: "",
-    cnpj: "",
+    cpf: null,
+    cnpj: null,
     endereco: "",
     tipo: "",
   });
@@ -48,18 +58,103 @@ function CadastroUsuario() {
       [e.target.name]: e.target.value,
     });
   }
-  async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
-    e.preventDefault();
-    if (confirmarSenha == user.senha) {
-        console.log(user)
-      cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult); 
-      alert("Usuario cadastrado com sucesso");
+
+  async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (confirmarSenha === user.senha) {
+      try {
+        await cadastroUsuario("/usuarios/cadastrar", user, setUserResult);
+        toast.success("Usuário cadastrado com sucesso", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined,
+        });
+      } catch (error) {
+        toast.error("Falha interna ao cadastrar", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined,
+        });
+      }
     } else {
-      alert( "Dados inconsistentes. Favor verificar as informações de cadastro.");
+      toast.error("As senhas não conferem, tente novamente", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+      });
+
+      setUser({ ...user, senha: "" });
+      setConfirmarSenha("");
     }
   }
+
+  var dadoComponent;
+  if (user.tipo == "vendedor") {
+    dadoComponent = (
+      <TextField
+        value={user.cnpj}
+        onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+        id="cnpj"
+        label="Cnpj"
+        variant="outlined"
+        name="cnpj"
+        margin="normal"
+        fullWidth
+      />
+    );
+  } else {
+    dadoComponent = (
+      <TextField
+        value={user.cpf}
+        onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+        id="cpf"
+        label="Cpf"
+        variant="outlined"
+        name="cpf"
+        margin="normal"
+        fullWidth
+      />
+    );
+  }
+
+  const [formCadastro, setFormCadastro] = useState(true);
+
+  const padraoEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+  useEffect(() => {
+    if (
+      user.nome.length >= 2 &&
+      user.email.match(padraoEmail) &&
+      user.senha.length > 3 &&
+      user.senha === confirmarSenha
+    ) {
+      setFormCadastro(false);
+    }
+  }, [user]);
+
   return (
-    <Grid container direction="row" justifyContent="center" alignItems="center">
+    <Grid
+      container
+      direction="row"
+      justifyContent="center"
+      alignItems="center"
+      className="box"
+    >
       <Grid item xs={6} className="imagem2"></Grid>
       <Grid item xs={6} alignItems="center">
         <Box paddingX={10}>
@@ -70,15 +165,41 @@ function CadastroUsuario() {
               color="textPrimary"
               component="h3"
               align="center"
-              className="textos2"
+              className="textos2, fonte2"
             >
-              Cadastrar
+              Cadastro
             </Typography>
+            <FormControl className="form">
+              <FormLabel className="fonte1" id="tipoUsuario">
+                Você é um...
+              </FormLabel>
+              <RadioGroup
+                className="fonte1"
+                row
+                aria-labelledby="tipoDeUsuario"
+                value={user.tipo}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                id="tipo"
+                name="tipo"
+              >
+                <FormControlLabel
+                  value="consumidor"
+                  control={<Radio />}
+                  label="Consumidor"
+                />
+                <FormControlLabel
+                  value="vendedor"
+                  control={<Radio />}
+                  label="Fornecedor"
+                />
+              </RadioGroup>
+            </FormControl>
             <TextField
+              className="fonte1"
               value={user.nome}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="nome"
-              label="nome"
+              label="Nome"
               variant="outlined"
               name="nome"
               margin="normal"
@@ -88,7 +209,7 @@ function CadastroUsuario() {
               value={user.email}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="email"
-              label="email"
+              label="Email"
               variant="outlined"
               name="email"
               margin="normal"
@@ -98,7 +219,7 @@ function CadastroUsuario() {
               value={user.senha}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="senha"
-              label="senha"
+              label="Senha"
               variant="outlined"
               name="senha"
               margin="normal"
@@ -111,7 +232,7 @@ function CadastroUsuario() {
                 confirmarSenhaHandle(e)
               }
               id="confirmarSenha"
-              label="confirmarSenha"
+              label="Confirme a senha"
               variant="outlined"
               name="confirmarSenha"
               margin="normal"
@@ -122,54 +243,30 @@ function CadastroUsuario() {
               value={user.endereco}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="endereco"
-              label="endereço"
+              label="Endereço"
               variant="outlined"
               name="endereco"
               margin="normal"
               fullWidth
             />
-            <TextField
-              value={user.tipo}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-              id="tipo"
-              label="tipo"
-              variant="outlined"
-              name="tipo"
-              margin="normal"
-              fullWidth
-
-            />
-            <TextField
-              value={user.cpf}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-              id="cpf"
-              label="cpf"
-              variant="outlined"
-              name="cpf"
-              margin="normal"
-              fullWidth
-            />
-            <TextField
-              value={user.cnpj}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-              id="cnpj"
-              label="cnpj"
-              variant="outlined"
-              name="cnpj"
-              margin="normal"
-              fullWidth
-            />
+            {dadoComponent}
             <Box marginTop={2} textAlign="center">
               <Link to="/login" className="text-decorator-none">
                 <Button
                   variant="contained"
                   color="secondary"
                   className="btnCancelar"
+                  style={{ marginRight: 6 }}
                 >
                   Cancelar
                 </Button>
               </Link>
-              <Button type="submit" variant="contained" color="primary">
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                disabled={formCadastro}
+              >
                 Cadastrar
               </Button>
             </Box>

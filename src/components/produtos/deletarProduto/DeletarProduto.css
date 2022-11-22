@@ -1,0 +1,12 @@
+.cardDeletar {
+    display: flex;
+    flex-direction: row;
+}
+
+.btnExcluir {
+    background-color: #cc4932;
+}
+
+.btnNaoExcluir {
+    background-color: #4d924d;
+}

@@ -50,13 +50,6 @@ function CadastroProduto() {
     })
 
     useEffect(() => {
-        setProduto({
-            ...produto,
-            categoria: categoria
-        })
-    }, [categoria])
-
-    useEffect(() => {
         getCategoria()
         if (id !== undefined) {
             findByIdProduto(id)
@@ -129,17 +122,11 @@ function CadastroProduto() {
         history('/produtos')
     }
     return (
-        <Container maxWidth="sm" className="topo">
-            <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de Cadastro Produto</Typography>
-                <TextField value={produto.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="nome" label="nome" variant="outlined" name="nome" margin="normal" fullWidth />
-                <TextField value={produto.valor} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="valor" label="valor" name="valor" variant="outlined" margin="normal" fullWidth />
-                <TextField value={produto.kg} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="kg" label="kg" name="kg" variant="outlined" margin="normal" fullWidth />
-                <TextField value={produto.estoque} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="estoque" label="estoque" name="estoque" variant="outlined" margin="normal" fullWidth />
-                <TextField value={produto.imagem} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="imagem" label="imagem" name="imagem" variant="outlined" margin="normal" fullWidth />
-
+        <Container maxWidth="sm" className="topo, fonte1">
+            <form onSubmit={onSubmit} >
+                <Typography variant="h4" color="textSecondary" component="h1" align="center" className='fonte2'>Cadastro de Produto</Typography>
                 <FormControl >
-                    <InputLabel id="demo-simple-select-helper-label">Categoria </InputLabel>
+                    <InputLabel id="demo-simple-select-helper-label" className='fonte1'>Categoria </InputLabel>
                     <Select
                         labelId="demo-simple-select-helper-label"
                         id="demo-simple-select-helper"
@@ -150,14 +137,22 @@ function CadastroProduto() {
                         })}>
                         {
                             categorias.map(categoria => (
-                                <MenuItem value={categoria.id}>{categoria.titulo}</MenuItem>
+                                <MenuItem className='fonte1' value={categoria.id}>{categoria.titulo}</MenuItem>
                             ))
                         }
                     
                     </Select>
-                    <FormHelperText>Escolha uma categoria para o produto</FormHelperText>
-                    <Button type="submit" variant="contained" color="primary">
-                        Finalizar
+                    <FormHelperText className='fonte1'>Escolha uma categoria para o produto</FormHelperText>
+                    
+                    <Button type="submit" variant="contained" disabled={categoria.id === 0} className='fonte3, botao'>
+
+                <TextField value={produto.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="nome" label="Nome" variant="outlined" name="nome" margin="normal" fullWidth />
+                <TextField value={produto.valor} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="valor" label="Valor" name="valor" variant="outlined" margin="normal" fullWidth />
+                <TextField value={produto.kg} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="kg" label="Kg" name="kg" variant="outlined" margin="normal" fullWidth />
+                <TextField value={produto.estoque} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="estoque" label="Estoque" name="estoque" variant="outlined" margin="normal" fullWidth />
+                <TextField value={produto.imagem} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)} id="imagem" label="Imagem" name="imagem" variant="outlined" margin="normal" fullWidth />
+                      
+                      Finalizar
                     </Button>
                 </FormControl>
             </form>

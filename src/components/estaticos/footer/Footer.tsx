@@ -30,17 +30,14 @@ function Footer() {
                     <a href="https://www.instagram.com/generationbrasil/" target="_blank" rel="noopener noreferrer">
                         <InstagramIcon className='redes' />
                     </a>
-                    <a href="https://www.linkedin.com/school/generationbrasil/" target="_blank" rel="noopener noreferrer">
-                        <LinkedInIcon className='redes' />
-                    </a>
                 </Box>
             </Box>
             <Box className='box2'>
                 <Box paddingTop={1}>
-                    <Typography variant="subtitle2" align="center" gutterBottom className='textos' >© 2020 Copyright:</Typography>
+                    <Typography variant="subtitle2" align="center" gutterBottom className='textos' >© 2022 Copyright</Typography>
                 </Box>
                 <Box>
-                    <a target="_blank" href="https://brasil.generation.org" rel="noopener noreferrer">
+                    <a target="_blank" href="https://brasil.generation.org" rel="noopener noreferrer" className='classDeco'>
                         <Typography variant="subtitle2" gutterBottom className='textos' align="center">brasil.generation.org</Typography>
                     </a>
                 </Box>

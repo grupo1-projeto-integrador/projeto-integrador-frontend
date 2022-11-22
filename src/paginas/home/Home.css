@@ -1,22 +1,57 @@
+@import url('https://fonts.cdnfonts.com/css/dustismo-roman');
+@import url('https://fonts.cdnfonts.com/css/aller');
+
 .caixa{
-    background-color: #3F51B5;
+    background-color: #FEFAE0;
 }
 
 .titulo{
-   color: white !important;
+   color: #FEFAE0 !important;
    font-weight: bold !important;
 }
 
 .botao{
-    border-color: white !important;
-    background-color: #3F51B5;
-    color: white !important;
+    font-family: 'aller', sans-serif !important;
+    border-color: #606c38 !important;
+    background-color: #606c38 !important;
+    color: #FEFAE0 !important;
 }
 
 .produto{
-    background-color: white;
+    background-color: #FEFAE0;
 }
 
 .text-decorator-none {
     text-decoration: none;
+}
+
+.fonte1{
+    font-family: 'aller', sans-serif !important;
+    font-family: 'Aller Display', sans-serif;
+    font-family: 'Aller Light', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+}
+
+.fonte2{
+    color: #673a14 !important;
+    font-family: 'Dustismo Roman', sans-serif !important;
+ }
+ 
+.logoWrapper {
+    background: url("https://i.imgur.com/GIOWkwy.png") no-repeat center;
+    background-size: cover;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logoBox {
+    background-color: rgba(254, 250, 224, 0.6);
+    padding-top: 24px;
+    padding-bottom: 24px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    max-width: 380px;
 }

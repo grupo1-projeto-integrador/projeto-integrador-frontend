@@ -1,8 +1,13 @@
+@import url('https://fonts.cdnfonts.com/css/aller');
+
 .cursor{
     cursor: pinter;
 }
 
 .btnModal{
-    border-color: white !important;
-    background-color: white !important;
+    border-color: #606c38 !important;
+    background-color: #FEFAE0 !important;
+    color: #673a14 !important;
+    font-family: 'aller', sans-serif !important;
+    font-weight: bold !important;
 }

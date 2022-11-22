@@ -1,9 +1,12 @@
+@import url('https://fonts.cdnfonts.com/css/dustismo-roman');
+@import url('https://fonts.cdnfonts.com/css/aller');
+
 .textos1{
     font-weight: bold !important;
  }
  
  .imagem{
-     background-image: url(https://i.imgur.com/d5bMdDJ.jpg);
+     background-image: url(https://i.imgur.com/tR7s44o.jpg);
      background-repeat: no-repeat;
      width: 100vh;
      min-height: 100vh;
@@ -15,6 +18,34 @@
      text-decoration: none;
  }
 
+ .botao {
+    background-color: #86cb86 !important;
+    display: flex;
+    min-width: 30px;
+    min-height: 40px;
+}
+
+.box{
+    background-color: rgb(254, 250, 224);
+}
+
+.fonte1{
+    font-family: 'aller', sans-serif !important;
+    font-family: 'Aller Display', sans-serif;
+    font-family: 'Aller Light', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+}
+
+.fonte2{
+    color: #673a14 !important;
+    font-family: 'Dustismo Roman', sans-serif !important;
+ }
+
  .cor-botao {
-    background-color: #4d924d !important;
+    background-color: #606c38 !important;
+    font-weight: 500 !important;
+    font-family: 'aller', sans-serif !important;
+    color: #FEFAE0 !important;
+    
 }

@@ -3,6 +3,7 @@ interface UserLogin{
     id:number;
     nome: string;
     usuario: string;
+    tipo: string;
     foto:string;
     senha:string;
     token:string
