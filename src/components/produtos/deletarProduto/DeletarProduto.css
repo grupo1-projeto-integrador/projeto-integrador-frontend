@@ -4,9 +4,13 @@
 }
 
 .btnExcluir {
-    background-color: #cc4932;
+    background-color: #bc6c25 !important;
+    font-family: 'aller', sans-serif !important;
+    font-weight: 500;
 }
 
 .btnNaoExcluir {
-    background-color: #4d924d;
+    background-color: #606c38;
+    font-family: 'aller', sans-serif !important;
+    font-weight: 500;
 }
