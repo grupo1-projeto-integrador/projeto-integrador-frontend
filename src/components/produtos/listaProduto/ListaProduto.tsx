@@ -80,6 +80,7 @@ function ListaProduto() {
     getProduto();
   }, [produto.length]);
 
+
   return (
     <div className="card1">
       {produto.map((produto) => {
@@ -135,6 +136,9 @@ function ListaProduto() {
                 </Typography>
                 <Typography variant="body2" component="p">
                  Categoria: {produto.categoria?.titulo}
+                </Typography>
+                <Typography variant="body2" component="p">
+                 Vendido por: {produto.usuario?.nome}
                 </Typography>
               </CardContent>
               {usuario.tipo === "vendedor" && (
