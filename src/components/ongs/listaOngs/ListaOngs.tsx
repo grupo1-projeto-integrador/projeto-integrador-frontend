@@ -11,18 +11,18 @@ import { Link } from "react-router-dom";
 const ongs = [
   {
     nome: "Alcóolicos anônimos",
-    image: "",
-    link: '',
+    image: "https://i.imgur.com/nlzsr6P.png",
+    link: "https://google.com",
   },
   {
     nome: "MST",
-    image: "",
-    link: '',
+    image: "https://i.imgur.com/nlzsr6P.png",
+    link: "https://yahoo.com",
   },
   {
     nome: "Góticos livres",
-    image: "",
-    link: '',
+    image: "https://i.imgur.com/nlzsr6P.png",
+    link: "https://mercadolivre.com",
   },
 ];
 
@@ -37,6 +37,7 @@ const ListaOngs = () => {
                 {ong.nome}
               </Typography>
               <img
+                src={ong.image}
                 height={125}
                 width={100}
                 alt=""
@@ -52,8 +53,9 @@ const ListaOngs = () => {
                   flexDirection="column"
                   justifyContent="center"
                 >
-                  <Link
-                    to={ong.link}
+                  <a
+                    href={ong.link}
+                    target="_blank"
                     className="text-decorator-none"
                   >
                     <Box mx={1}>
@@ -67,7 +69,7 @@ const ListaOngs = () => {
                         visitar
                       </Button>
                     </Box>
-                  </Link>
+                  </a>
                 </Box>
               </CardActions>
             </CardContent>
