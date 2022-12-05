@@ -8,6 +8,7 @@ import "./Home.css";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../store/tokens/TokensReducers";
 import { toast } from "react-toastify";
+import ModalCategoria from "../../components/categorias/listaCategoria/modalCategoria/ModalCategoria";
 
 function Home() {
   let history = useNavigate();
@@ -67,6 +68,7 @@ function Home() {
             <Box display="flex" justifyContent="center">
               <Box marginRight={1}>
                 <ModalProduto />
+                <ModalCategoria />
               </Box>
             </Box>
           </div>
