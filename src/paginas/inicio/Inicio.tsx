@@ -6,7 +6,7 @@ import ModalProduto from "../../components/produtos/modalProduto/ModalProduto";
 import "./Inicio.css";
 
 
-function Home() {
+function Inicio() {
 
   return (
     <>
@@ -43,17 +43,19 @@ function Home() {
             </Box>
             <Box display="flex" justifyContent="center">
               <Box marginRight={1}>
-                <ModalProduto />
+                
               </Box>
             </Box>
           </div>
         </Grid>
         <Grid xs={12} className="produto">
-          <TabProduto />
+        <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" className="titulo">Sobre a Colheita Fresca</Typography>
+          <Typography variant="body1" gutterBottom color="textPrimary" align="justify" className='fonte1'>Nossa missão é facilitar a conexão de pessoas com produtos orgânicos, diretamente com produtores familiares. Temos como objetivos diminuir o desperdício de alimentos, estimular o consumo de alimentos orgânicos com qualidade e preço justo, incentivar o convívio social e assistir famílias que se encontram em condições de vulnerabilidade.</Typography>
+
         </Grid>
       </Grid>
     </>
   );
 }
 
-export default Home;
+export default Inicio;
