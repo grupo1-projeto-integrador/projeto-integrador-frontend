@@ -51,7 +51,7 @@ const ListaOngs = () => {
 
     <div className="card1">
 
-      <Grid container direction='row' justifyContent='center' alignItems='center'>
+      <Grid container direction='row' justifyContent='center' alignItems='center'className="titulo, fonte2">
         <Grid alignItems='center' xs={6}>
           <Box paddingX={20}>
             <h1>
@@ -73,7 +73,7 @@ const ListaOngs = () => {
         <Box m={2}>
           <Card variant="outlined" className="card">
             <CardContent className="cardInside">
-              <Typography variant="h5" component="h2">
+              <Typography variant="h5" component="h2" className="titulo, fonte2">
                 {ong.nome}
               </Typography>
               <img
