@@ -16,7 +16,9 @@ function Navbar() {
   );
 
   const userId = useSelector<TokenState, TokenState['id']>((state) => state.id);
+
   const tipo = useSelector<TokenState, TokenState['tipo']>(
+
     (state) => state.tipo
   );
 
@@ -24,14 +26,17 @@ function Navbar() {
   const dispatch = useDispatch();
 
   function goLogout() {
+
     dispatch(addToken(''));
     toast.info('Usuário deslogado', {
       position: 'top-right',
+
       autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: false,
       draggable: false,
+
       theme: 'colored',
       progress: undefined,
     });
@@ -61,6 +66,7 @@ function Navbar() {
     endereco: '',
     tipo: tipo,
   });
+
 
   return (
     <>
@@ -116,7 +122,7 @@ function Navbar() {
             </Link>
             <Box mx={1.5} className="cursor" onClick={goLogout}>
               <Typography variant="h6" color="inherit" className="fonte">
-                Sair
+                Logout
               </Typography>
             </Box>           
           </Box>
