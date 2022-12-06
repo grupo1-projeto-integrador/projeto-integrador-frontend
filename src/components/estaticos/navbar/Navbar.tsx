@@ -16,9 +16,7 @@ function Navbar() {
   );
 
   const userId = useSelector<TokenState, TokenState['id']>((state) => state.id);
-
   const tipo = useSelector<TokenState, TokenState['tipo']>(
-
     (state) => state.tipo
   );
 
@@ -36,7 +34,6 @@ function Navbar() {
       closeOnClick: true,
       pauseOnHover: false,
       draggable: false,
-
       theme: 'colored',
       progress: undefined,
     });
@@ -122,7 +119,7 @@ function Navbar() {
             </Link>
             <Box mx={1.5} className="cursor" onClick={goLogout}>
               <Typography variant="h6" color="inherit" className="fonte">
-                Logout
+                Sair
               </Typography>
             </Box>           
           </Box>
