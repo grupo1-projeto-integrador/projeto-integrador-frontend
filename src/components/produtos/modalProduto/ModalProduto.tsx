@@ -8,7 +8,7 @@ import CadastroProduto from '../cadastroProduto/CadastroProduto';
 import { useDispatch, useSelector } from 'react-redux';
 import Usuario from '../../../models/Usuario';
 import { TokenState } from '../../../store/tokens/TokensReducers';
-import { addTipo} from '../../../store/tokens/Actions';
+import { addTipo } from '../../../store/tokens/Actions';
 import { addToken } from '../../../store/tokens/Actions';
 import { buscaId } from '../../../services/Service';
 
@@ -54,7 +54,7 @@ function ModalProduto() {
         (state) => state.tokens
     );
 
- 
+
     const dispatch = useDispatch();
 
     const userId = useSelector<TokenState, TokenState['id']>(
@@ -63,20 +63,20 @@ function ModalProduto() {
 
     const tipo = useSelector<TokenState, TokenState["tipo"]>(
         (state) => state.tipo
-      );
-      
-      async function getUserById(id: number) {
+    );
+
+    async function getUserById(id: number) {
         await buscaId(`usuarios/${id}`, setUsuario, {
-          headers: {
-            Authorization: token,
-          },
+            headers: {
+                Authorization: token,
+            },
         });
-      }
-    
-    
-      useEffect(() => {
+    }
+
+
+    useEffect(() => {
         getUserById(+userId);
-      });
+    });
 
     const [usuario, setUsuario] = useState<Usuario>({
         id: +userId,
@@ -85,14 +85,14 @@ function ModalProduto() {
         senha: "",
         cpf: "",
         cnpj: "",
-        endereco:"",
+        endereco: "",
         tipo: tipo
-      });
+    });
 
 
     const body = (
         <div style={modalStyle} className={classes.paper}>
-            <Box display="flex" justifyContent="flex-end" className="cursor">
+            <Box display="flex" justifyContent="center" className="cursor">
                 <CloseIcon onClick={handleClose} />
 
             </Box>
@@ -102,32 +102,32 @@ function ModalProduto() {
         </div>
     );
 
-let modalComp;
+    let modalComp;
 
-if(usuario.tipo ==="vendedor"){
-    modalComp =         <div>
-    <Button
-        variant="outlined"
-        className="btnModal"
-        onClick={handleOpen}>Novo Produto</Button>
-    <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description"
-    >
-        {body}
-    </Modal>
-</div>
-}else{
-    modalComp =   ''
+    if (usuario.tipo === "vendedor") {
+        modalComp = <div>
+            <Button
+                variant="outlined"
+                className="btnModal"
+                onClick={handleOpen}>Novo Produto</Button>
+            <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="simple-modal-title"
+                aria-describedby="simple-modal-description"
+            >
+                {body}
+            </Modal>
+        </div>
+    } else {
+        modalComp = ''
 
-}
+    }
 
     return (
         <>
- {modalComp}
- </>
+            {modalComp}
+        </>
     );
 }
 export default ModalProduto

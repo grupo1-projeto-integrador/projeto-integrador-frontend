@@ -65,9 +65,11 @@ function Home() {
                 Seja bem vinde à Colheita Fresca!
               </Typography>
             </Box>
-            <Box display="flex" justifyContent="center">
+            <Box display="flex" flexWrap="wrap" justifyContent="center" className="cursor">
               <Box marginRight={1}>
                 <ModalProduto />
+                </Box>
+                <Box marginRight={2}>
                 <ModalCategoria />
               </Box>
             </Box>

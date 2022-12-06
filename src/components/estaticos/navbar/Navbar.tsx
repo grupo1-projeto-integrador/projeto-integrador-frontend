@@ -62,24 +62,6 @@ function Navbar() {
     tipo: tipo,
   });
 
-  let novaCategoria;
-
-  if (usuario.tipo === "vendedor") {
-    novaCategoria = (
-      <>
-        {" "}
-        <Link to="/formularioCategoria" className="text-decorator-none">
-          <Box mx={1} className="cursor">
-            <Typography variant="h6" color="inherit" className="fonte">
-              Cadastrar Categoria
-            </Typography>
-          </Box>
-        </Link>
-      </>
-    );
-  } else {
-    novaCategoria = "";
-  }
 
   var navbarComponent;
 
@@ -124,11 +106,10 @@ function Navbar() {
                 </Typography>
               </Box>
             </Link>
-            {novaCategoria}
             <Link to="/ongs" className="text-decorator-none">
               <Box mx={1.5} className="cursor">
                 <Typography variant="h6" color="inherit" className="fonte">
-                  ONGs Parceiras
+                  Ong's
                 </Typography>
               </Box>
             </Link>
@@ -136,8 +117,18 @@ function Navbar() {
               <Typography variant="h6" color="inherit" className="fonte">
                 Logout
               </Typography>
-            </Box>
+            </Box>           
           </Box>
+          <Box mx={1.5} className="cursor">
+              <Toolbar >
+                <img
+                  src="https://i.imgur.com/2TUDqTB.png"
+                  alt="Carrinho"
+                  height={40}
+                  width={40}
+                />
+              </Toolbar>
+            </Box>
         </Toolbar>
       </AppBar>
     );
