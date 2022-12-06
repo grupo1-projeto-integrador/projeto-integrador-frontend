@@ -28,9 +28,12 @@ const ongs = [
 
 const ListaOngs = () => {
   return (
+
+    
     <div className="card1">
+      <h1></h1>
       {ongs.map((ong) => (
-        <Box m={2}>
+        <Box m={2}>          
           <Card variant="outlined" className="card">
             <CardContent className="cardInside">
               <Typography variant="h5" component="h2">
