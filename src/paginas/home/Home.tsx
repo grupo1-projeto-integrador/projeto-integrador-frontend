@@ -68,8 +68,8 @@ function Home() {
             <Box display="flex" flexWrap="wrap" justifyContent="center" className="cursor">
               <Box marginRight={1}>
                 <ModalProduto />
-                </Box>
-                <Box marginRight={2}>
+              </Box>
+              <Box marginRight={2}>
                 <ModalCategoria />
               </Box>
             </Box>
