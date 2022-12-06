@@ -103,15 +103,14 @@ function ListaProduto() {
               return "https://www.san-lorenzo.com/assets/uploads/riso-carnaroli_1625481745.png";
             case "Banana":
               return "https://ceagesp.gov.br/wp-content/uploads/2019/12/Banana_pratapng-328x328.png";
+            default:
+              return "https://i.imgur.com/nlzsr6P.png";
           }
         };
         return (
           <Box m={2}>
             <Card variant="outlined" className="card">
               <CardContent className="cardInside">
-                <Typography color="textSecondary" gutterBottom>
-                  Produtos
-                </Typography>
                 <Typography variant="h5" component="h2">
                   {produto.nome}
                 </Typography>
@@ -126,22 +125,16 @@ function ListaProduto() {
                   }}
                 />
                 <Typography variant="body2" component="p">
-                  {produto.valor}
+                  Valor: {produto.valor}
                 </Typography>
                 <Typography variant="body2" component="p">
-                  {produto.kg}
+                  Quantidade:{produto.kg}kg
                 </Typography>
                 <Typography variant="body2" component="p">
-                  {produto.estoque}
+                  Estoque:{produto.estoque}
                 </Typography>
                 <Typography variant="body2" component="p">
-                  {produto.imagem}
-                </Typography>
-                <Typography variant="body2" component="p">
-                  {produto.categoria?.titulo}
-                </Typography>
-                <Typography variant="body2" component="p">
-                  Vendido por: {produto.usuario?.nome}
+                 Categoria: {produto.categoria?.titulo}
                 </Typography>
               </CardContent>
               {usuario.tipo === "vendedor" && (
