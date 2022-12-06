@@ -21,6 +21,11 @@
     flex-wrap: wrap;
 }
 
+.card2 {
+    display: table-column;
+    flex-wrap: wrap;
+}
+
 .card {
     padding: 8px 23px;
     text-align: center;
