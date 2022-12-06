@@ -10,19 +10,19 @@ import { Link } from "react-router-dom";
 
 const ongs = [
   {
-    nome: "Alcóolicos anônimos",
-    image: "https://i.imgur.com/nlzsr6P.png",
-    link: "https://google.com",
+    nome: "Ação da Cidadania",
+    image: "https://i.imgur.com/3CIN4t0.png",
+    link: "https://www.acaodacidadania.org.br/",
   },
   {
-    nome: "MST",
-    image: "https://i.imgur.com/nlzsr6P.png",
-    link: "https://yahoo.com",
+    nome: "Amigos do Bem",
+    image: "https://i.imgur.com/ZixYJZf.png",
+    link: "https://www.instagram.com/amigosdobem/",
   },
   {
-    nome: "Góticos livres",
-    image: "https://i.imgur.com/nlzsr6P.png",
-    link: "https://mercadolivre.com",
+    nome: "Banco de Alimentos",
+    image: "https://i.imgur.com/qu967bw.png",
+    link: "https://www.instagram.com/ongbancodealimentos/",
   },
 ];
 
