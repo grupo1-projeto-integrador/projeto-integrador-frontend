@@ -18,6 +18,7 @@ function Navbar() {
   const userId = useSelector<TokenState, TokenState['id']>((state) => state.id);
 
   const tipo = useSelector<TokenState, TokenState['tipo']>(
+
     (state) => state.tipo
   );
 
@@ -25,18 +26,22 @@ function Navbar() {
   const dispatch = useDispatch();
 
   function goLogout() {
+
     dispatch(addToken(''));
     toast.info('Usuário deslogado', {
       position: 'top-right',
+
       autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: false,
       draggable: false,
+
       theme: 'colored',
       progress: undefined,
     });
     history('/login');
+
   }
 
   async function getUserById(id: number) {
@@ -148,6 +153,7 @@ function Navbar() {
       )}
     </>
   );
+
 }
 
 export default Navbar;
