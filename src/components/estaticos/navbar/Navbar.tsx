@@ -16,9 +16,7 @@ function Navbar() {
   );
 
   const userId = useSelector<TokenState, TokenState['id']>((state) => state.id);
-
   const tipo = useSelector<TokenState, TokenState['tipo']>(
-
     (state) => state.tipo
   );
 
@@ -26,17 +24,14 @@ function Navbar() {
   const dispatch = useDispatch();
 
   function goLogout() {
-
     dispatch(addToken(''));
     toast.info('Usuário deslogado', {
       position: 'top-right',
-
       autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: false,
       draggable: false,
-
       theme: 'colored',
       progress: undefined,
     });
@@ -66,25 +61,6 @@ function Navbar() {
     endereco: '',
     tipo: tipo,
   });
-
-  let novaCategoria;
-
-  if (usuario.tipo === 'vendedor') {
-    novaCategoria = (
-      <>
-        {' '}
-        <Link to="/formularioCategoria" className="text-decorator-none">
-          <Box mx={1} className="cursor">
-            <Typography variant="h6" color="inherit" className="fonte">
-              Cadastrar Categoria
-            </Typography>
-          </Box>
-        </Link>
-      </>
-    );
-  } else {
-    novaCategoria = '';
-  }
 
   return (
     <>
@@ -131,22 +107,28 @@ function Navbar() {
                   </Typography>
                 </Box>
               </Link>
-              {novaCategoria}
-              {token === '' ? (
-                <Link to="/login" className="texto-decorator-none">
-                <Box mx={1.5} className="cursor">
-                  <Typography variant="h6" color="inherit" className="fonte">
-                    Logar
-                  </Typography>
-                </Box>
-                </Link>
-              ) : (
-                <Box mx={1.5} className="cursor" onClick={goLogout}>
-                  <Typography variant="h6" color="inherit" className="fonte">
-                    Logout
-                  </Typography>
-                </Box>
-              )}
+              <Link to="/ongs" className="text-decorator-none">
+              <Box mx={1.5} className="cursor">
+                <Typography variant="h6" color="inherit" className="fonte">
+                  Ong's
+                </Typography>
+              </Box>
+            </Link>
+            <Box mx={1.5} className="cursor" onClick={goLogout}>
+              <Typography variant="h6" color="inherit" className="fonte">
+                Logout
+              </Typography>
+            </Box>           
+          </Box>
+          <Box mx={1.5} className="cursor">
+              <Toolbar >
+                <img
+                  src="https://i.imgur.com/2TUDqTB.png"
+                  alt="Carrinho"
+                  height={40}
+                  width={40}
+                />
+              </Toolbar>
             </Box>
           </Toolbar>
         </AppBar>
