@@ -135,7 +135,7 @@ function ListaProduto() {
                   Estoque:{produto.estoque}
                 </Typography>
                 <Typography variant="body2" component="p">
-                 Categoria: {produto.categoria?.titulo}
+                  Categoria: {produto.categoria?.titulo}
                 </Typography>
                 <Typography variant="body2" component="p">
                  Vendido por: {produto.usuario?.nome}
@@ -179,6 +179,27 @@ function ListaProduto() {
                         </Button>
                       </Box>
                     </Link>
+                  </Box>
+                </CardActions>
+              )}
+              {usuario.tipo !== "vendedor" && (
+                <CardActions className="cardbotao">
+                  <Box
+                    display="flex"
+                    flexDirection="column"
+                    justifyContent="center"
+                  >
+                    <Box mx={1}>
+                      <Button
+                        variant="contained"
+                        className="btnAtualizar"
+                        size="small"
+                        color="primary"
+                        style={{ marginBottom: 6 }}
+                      >
+                        comprar
+                      </Button>
+                    </Box>
                   </Box>
                 </CardActions>
               )}
