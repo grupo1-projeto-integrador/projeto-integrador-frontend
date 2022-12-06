@@ -5,6 +5,7 @@ import Footer from './components/estaticos/footer/Footer';
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 import Home from './paginas/home/Home';
 import Login from './paginas/login/Login';
+import Inicio from './paginas/inicio/Inicio';
 import './App.css';
 import { Provider } from 'react-redux';
 import store from './store/Store';
@@ -26,7 +27,7 @@ function App() {
         <Navbar />
         <div style={{ minHeight: '100vh' }}>
           <Routes> // Antigo Switch
-            <Route path="/" element={<Login />} />
+            <Route path="/" element={<Inicio />} />
             <Route path="/login" element={<Login />} />
             <Route path="/home" element={<Home />} />
             <Route path="/cadastrousuario" element={<CadastroUsuario />} />
