@@ -145,7 +145,7 @@ function ListaProduto() {
                 <CardActions className="cardbotao">
                   <Box
                     display="flex"
-                    flexDirection="column"
+                    flexDirection="row"
                     justifyContent="center"
                   >
                     <Link
