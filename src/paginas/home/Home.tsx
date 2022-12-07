@@ -8,6 +8,7 @@ import "./Home.css";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../store/tokens/TokensReducers";
 import { toast } from "react-toastify";
+import ModalCategoria from "../../components/categorias/listaCategoria/modalCategoria/ModalCategoria";
 
 function Home() {
   let history = useNavigate();
@@ -64,9 +65,12 @@ function Home() {
                 Seja bem vinde à Colheita Fresca!
               </Typography>
             </Box>
-            <Box display="flex" justifyContent="center">
+            <Box display="flex" flexWrap="wrap" justifyContent="center" className="cursor">
               <Box marginRight={1}>
                 <ModalProduto />
+              </Box>
+              <Box marginRight={2}>
+                <ModalCategoria />
               </Box>
             </Box>
           </div>

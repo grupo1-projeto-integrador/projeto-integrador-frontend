@@ -1,6 +1,6 @@
 @import url('https://fonts.cdnfonts.com/css/aller');
 
-.text-decorator-none{
+.text-decorator-none {
     text-decoration: none;
 }
 
@@ -21,9 +21,18 @@
     flex-wrap: wrap;
 }
 
+.card2 {
+    display: table-column;
+    flex-wrap: wrap;
+}
+
 .card {
     padding: 8px 23px;
     text-align: center;
     border-radius: 6px !important
-    
+}
+.btnCategoria {
+    width: 100%;
+    justify-content: center !important;
+
 }

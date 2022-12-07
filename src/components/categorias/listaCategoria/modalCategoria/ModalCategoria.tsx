@@ -3,14 +3,12 @@ import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import { Button, Typography } from "@material-ui/core"
 import { Box, Modal } from "@mui/material";
 import CloseIcon from '@material-ui/icons/Close';
-import './ModalProduto.css';
-import CadastroProduto from '../cadastroProduto/CadastroProduto';
+import './ModalCategoria.css';
 import { useDispatch, useSelector } from 'react-redux';
-import Usuario from '../../../models/Usuario';
-import { TokenState } from '../../../store/tokens/TokensReducers';
-import { addTipo } from '../../../store/tokens/Actions';
-import { addToken } from '../../../store/tokens/Actions';
-import { buscaId } from '../../../services/Service';
+import { TokenState } from '../../../../store/tokens/TokensReducers';
+import { buscaId } from '../../../../services/Service';
+import Usuario from '../../../../models/Usuario';
+import CadastroCategoria from '../../cadastroCategoria/CadastroCategoria';
 
 
 function getModalStyle() {
@@ -37,7 +35,8 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-function ModalProduto() {
+function ModalCategoria() {
+
     const classes = useStyles();
     const [modalStyle] = React.useState(getModalStyle);
     const [open, setOpen] = React.useState(false);
@@ -97,7 +96,7 @@ function ModalProduto() {
 
             </Box>
 
-            <CadastroProduto />
+            <CadastroCategoria />
 
         </div>
     );
@@ -109,7 +108,7 @@ function ModalProduto() {
             <Button
                 variant="outlined"
                 className="btnModal"
-                onClick={handleOpen}>Novo Produto</Button>
+                onClick={handleOpen}>Nova Categoria</Button>
             <Modal
                 open={open}
                 onClose={handleClose}
@@ -130,4 +129,4 @@ function ModalProduto() {
         </>
     );
 }
-export default ModalProduto
+export default ModalCategoria;

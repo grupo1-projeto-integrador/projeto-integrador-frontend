@@ -8,6 +8,7 @@ import { busca, buscaId, post, put } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/TokensReducers';
 import { toast } from 'react-toastify';
+import Usuario from '../../../models/Usuario';
 
 function CadastroProduto() {
     let history = useNavigate();
@@ -16,6 +17,11 @@ function CadastroProduto() {
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
     );
+    
+  const tipo = useSelector<TokenState, TokenState["tipo"]>(
+    (state) => state.tipo
+  );
+  const userId = useSelector<TokenState, TokenState["id"]>((state) => state.id);
 
     useEffect(() => {
         if (token == "") {
@@ -49,6 +55,17 @@ function CadastroProduto() {
         usuario: null
     })
 
+    const [usuario, setUsuario] = useState<Usuario>({
+        id: +userId,
+        nome: "",
+        email: "",
+        senha: "",
+        cpf: "",
+        cnpj: "",
+        endereco: "",
+        tipo: tipo,
+      });
+
     useEffect(() => {
         getCategoria()
         if (id !== undefined) {
@@ -74,7 +91,8 @@ function CadastroProduto() {
         setProduto({
             ...produto,
             [e.target.name]: e.target.value,
-            categoria: categoria
+            categoria: categoria,
+            usuario: usuario
         })
 
     }

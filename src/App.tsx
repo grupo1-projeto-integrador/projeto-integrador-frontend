@@ -5,6 +5,7 @@ import Footer from './components/estaticos/footer/Footer';
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 import Home from './paginas/home/Home';
 import Login from './paginas/login/Login';
+import Inicio from './paginas/inicio/Inicio';
 import './App.css';
 import { Provider } from 'react-redux';
 import store from './store/Store';
@@ -16,6 +17,7 @@ import ListaCategoria from './components/categorias/listaCategoria/ListaCategori
 import CadastroProduto from './components/produtos/cadastroProduto/CadastroProduto';
 import DeletarProduto from './components/produtos/deletarProduto/DeletarProduto';
 import ListaProduto from './components/produtos/listaProduto/ListaProduto';
+import ListaOngs from './components/ongs/listaOngs/ListaOngs';
 
 function App() {
   return (
@@ -25,12 +27,13 @@ function App() {
         <Navbar />
         <div style={{ minHeight: '100vh' }}>
           <Routes> // Antigo Switch
-            <Route path="/" element={<Login />} />
+            <Route path="/" element={<Inicio />} />
             <Route path="/login" element={<Login />} />
             <Route path="/home" element={<Home />} />
             <Route path="/cadastrousuario" element={<CadastroUsuario />} />
             <Route path="/categoria" element={<ListaCategoria />} />
             <Route path="/produtos" element={<ListaProduto />} />
+            <Route path="/ongs" element={<ListaOngs />} />
             <Route path="/formularioProduto" element={<CadastroProduto />} />
             <Route path="/formularioProduto/:id" element={<CadastroProduto />} />
             <Route path="/formularioCategoria" element={<CadastroCategoria />} />

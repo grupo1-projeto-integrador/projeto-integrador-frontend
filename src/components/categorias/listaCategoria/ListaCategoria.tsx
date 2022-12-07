@@ -23,20 +23,20 @@ function ListaCategoria() {
 
     const tipo = useSelector<TokenState, TokenState["tipo"]>(
         (state) => state.tipo
-      );
+    );
 
-      async function getUserById(id: number) {
+    async function getUserById(id: number) {
         await buscaId(`usuarios/${id}`, setUsuario, {
-          headers: {
-            Authorization: token,
-          },
+            headers: {
+                Authorization: token,
+            },
         });
-      }
-    
-    
-      useEffect(() => {
+    }
+
+
+    useEffect(() => {
         getUserById(+userId);
-      });
+    });
 
     const [usuario, setUsuario] = useState<Usuario>({
         id: +userId,
@@ -45,13 +45,13 @@ function ListaCategoria() {
         senha: "",
         cpf: "",
         cnpj: "",
-        endereco:"",
+        endereco: "",
         tipo: tipo
-      });
+    });
 
 
-    useEffect(()=>{
-        if(token == ''){
+    useEffect(() => {
+        if (token == '') {
             toast.error('Você deve estar logado', {
                 position: "top-right",
                 autoClose: 2000,
@@ -66,7 +66,7 @@ function ListaCategoria() {
         }
     }, [token])
 
-    async function getCategoria(){
+    async function getCategoria() {
         await busca("/categoria", setCategoria, {
             headers: {
                 'Authorization': token
@@ -74,51 +74,51 @@ function ListaCategoria() {
         })
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         getCategoria()
     }, [categoria.length])
 
     return (
-        <div className='card1' > 
-        {
-            categoria.map(categoria => (
-            <Box m={2} >
-                <Card variant="outlined" className= "card">
-                    <CardContent>
-                        <Typography color="textSecondary" gutterBottom>
-                            Categoria
-                        </Typography>
-                        <Typography variant="h5" component="h2">
-                            {categoria.titulo}
-                        </Typography>
-                    </CardContent>
-                    {usuario.tipo ==='vendedor'? 
-                    (<> <CardActions>
-                        <Box display="flex" justifyContent="center" mb={1.5} >
+        <div className='card1' >
+            {
+                categoria.map(categoria => (
+                    <Box m={2} >
+                        <Card variant="outlined" className="card">
+                            <CardContent>
+                                <Typography color="textSecondary" gutterBottom>
+                                    Categoria
+                                </Typography>
+                                <Typography variant="h5" component="h2">
+                                    {categoria.titulo}
+                                </Typography>
+                            </CardContent>
+                            {usuario.tipo === 'vendedor' ?
+                                (<> <CardActions >
+                                    <Box display="flex" justifyContent="center" mb={1.5} className="btnCategoria" >
 
-                            <Link to={`/formularioCategoria/${categoria.id}`} className="text-decorator-none">
-                                <Box mx={1}>
-                                    <Button variant="contained" className="btnAtualizar" size='small' color="primary" >
-                                        atualizar
-                                    </Button>
-                                </Box>
-                            </Link>
-                            <Link to={`/deletarCategoria/${categoria.id}`} className="text-decorator-none">
-                                <Box mx={1}>
-                                    <Button variant="contained" className="btnDeletar" size='small' color="secondary">
-                                        deletar
-                                    </Button>
-                                </Box>
-                            </Link>
-                        </Box>
-                    </CardActions>
-                        </>
-                        ):
-                    (<>
-                    </>)}
-                </Card>
-            </Box>
-            ))
+                                        <Link to={`/formularioCategoria/${categoria.id}`} className="text-decorator-none">
+                                            <Box mx={1}>
+                                                <Button variant="contained" className="btnAtualizar" size='small' color="primary" >
+                                                    atualizar
+                                                </Button>
+                                            </Box>
+                                        </Link>
+                                        <Link to={`/deletarCategoria/${categoria.id}`} className="text-decorator-none">
+                                            <Box mx={1}>
+                                                <Button variant="contained" className="btnDeletar" size='small' color="secondary">
+                                                    deletar
+                                                </Button>
+                                            </Box>
+                                        </Link>
+                                    </Box>
+                                </CardActions>
+                                </>
+                                ) :
+                                (<>
+                                </>)}
+                        </Card>
+                    </Box>
+                ))
             }
         </div>
     );
