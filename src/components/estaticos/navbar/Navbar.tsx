@@ -68,7 +68,7 @@ function Navbar() {
   return (
     <>
       {window.location.pathname === '/login' ||
-      window.location.pathname === '/cadastrousuario' ? (
+        window.location.pathname === '/cadastrousuario' ? (
         <></>
       ) : (
         <AppBar className="color" position="static">
@@ -111,19 +111,29 @@ function Navbar() {
                 </Box>
               </Link>
               <Link to="/ongs" className="text-decorator-none">
-              <Box mx={1.5} className="cursor">
-                <Typography variant="h6" color="inherit" className="fonte">
-                  Ong's
-                </Typography>
+                <Box mx={1.5} className="cursor">
+                  <Typography variant="h6" color="inherit" className="fonte">
+                    Ong's
+                  </Typography>
+                </Box>
+              </Link>
               </Box>
-            </Link>
-            <Box mx={1.5} className="cursor" onClick={goLogout}>
-              <Typography variant="h6" color="inherit" className="fonte">
-                Sair
-              </Typography>
-            </Box>           
-          </Box>
-          <Box mx={1.5} className="cursor">
+              {token === '' ? (
+                <Link to="/login" className="text-decorator-none">
+                <Box mx={1.5} className="cursor">
+                  <Typography variant="h6" color="inherit" className="fonte">
+                    Login
+                  </Typography>
+                </Box>
+                </Link>
+              ) : (
+                <Box mx={1.5} className="cursor" onClick={goLogout}>
+                  <Typography variant="h6" color="inherit" className="fonte">
+                    Sair
+                  </Typography>
+                </Box>
+              )}
+            <Box mx={1.5} className="cursor">
               <Toolbar >
                 <img
                   src="https://i.imgur.com/2TUDqTB.png"

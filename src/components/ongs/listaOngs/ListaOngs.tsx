@@ -54,6 +54,7 @@ const ListaOngs = () => {
       <Grid container direction='row' justifyContent='center' alignItems='center'className="titulo, fonte2">
         <Grid alignItems='center' xs={6}>
           <Box paddingX={20}>
+            <Typography align="justify">
             <h1>
               Ong's parceiras
             </h1>
@@ -64,6 +65,7 @@ const ListaOngs = () => {
 
               Você consegue acessar o site de cada um delas apenas clicando em visitar, assim terá a oportunidade de saber um pouco mais sobre elas e contribuir da forma que puder com a mais próxima de você.
             </p>
+            </Typography>
           </Box>
         </Grid>
       </Grid>
